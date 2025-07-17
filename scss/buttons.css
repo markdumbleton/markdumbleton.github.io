@@ -1,0 +1,185 @@
+.button {
+  position: relative;
+  background-color: transparent;
+  background-image: none;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 0.5rem;
+  font-family: "Open Sans";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 120%;
+  min-height: 3rem;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  touch-action: manipulation;
+  cursor: pointer;
+  transition-duration: 0.2s;
+  transition-property: box-shadow, background-color, border-color, color;
+  transition-timing-function: ease-out;
+}
+.button.button--icon {
+  align-items: center;
+  display: inline-flex;
+}
+.button.button--icon svg {
+  display: inline-block;
+  vertical-align: middle;
+  height: 1.5rem;
+  width: 1.5rem;
+  flex-shrink: 0;
+}
+.button.button--icon .button--icon-left {
+  margin-right: 0.5rem;
+}
+.button.button--icon .button--icon-right {
+  margin-left: 0.5rem;
+}
+.button.button--large {
+  font-size: 1.5rem;
+  min-height: 4.5rem;
+  padding: 1rem 1.5rem;
+}
+.button.button--large.button--icon svg {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+.button.button--large.button--icon .button--icon-left {
+  margin-right: 0.75rem;
+}
+.button.button--large.button--icon .button--icon-right {
+  margin-left: 0.75rem;
+}
+.button.button--small {
+  font-size: 0.875rem;
+  min-height: 2.25rem;
+  padding: 0.5rem 0.75rem;
+  gap: 0.5rem;
+}
+.button.button--small.button--icon svg {
+  height: 1rem;
+  width: 1rem;
+}
+.button.button--small.button--icon .button--icon-left {
+  margin-right: 0.5rem;
+}
+.button.button--small.button--icon.button--icon-right {
+  margin-left: 0.5rem;
+}
+.button:focus {
+  outline: none;
+  box-shadow: 0px 0px 0px 1px #FFFFFF, 0px 0px 0px 3px #002147, 0px 0px 0px 4px #FFFFFF;
+}
+.button:disabled {
+  cursor: not-allowed;
+}
+
+.button--filled {
+  background-color: #002147;
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.3019607843);
+}
+.button--filled.button--icon svg {
+  fill: #FFFFFF;
+}
+.button--filled:hover {
+  background-color: #1A3759;
+}
+.button--filled:focus {
+  border-color: rgba(255, 255, 255, 0.3019607843);
+}
+.button--filled:disabled {
+  background-color: #99A6B5;
+}
+
+.button--outline {
+  background-color: transparent;
+  color: #002147;
+  border-color: #8090A3;
+}
+.button--outline.button--icon svg {
+  fill: #002147;
+}
+.button--outline:hover {
+  background-color: #E5E9ED;
+  mix-blend-mode: multiply;
+  border-color: #002147;
+}
+.button--outline:focus {
+  border-color: #CCD3DA;
+}
+.button--outline:disabled {
+  background-color: transparent;
+  color: #8090A3;
+  border-color: #8090A3;
+}
+.button--outline:disabled.button--icon svg {
+  fill: #8090A3;
+}
+.button--outline.button--active {
+  background-color: #002147;
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+.button--transparent {
+  background-color: transparent;
+  color: #002147;
+  border-color: transparent;
+}
+.button--transparent.button--icon svg {
+  fill: #002147;
+}
+.button--transparent:hover {
+  background-color: #E5E9ED;
+  mix-blend-mode: multiply;
+  border-color: transparent;
+}
+.button--transparent:focus {
+  border-color: transparent;
+}
+.button--transparent:disabled {
+  background-color: transparent;
+  color: #8090A3;
+  border-color: transparent;
+}
+.button--transparent:disabled.button--icon svg {
+  fill: #8090A3;
+}
+
+.button--sort {
+  font-weight: 600;
+}
+.button--sort .sort-icon {
+  margin-left: 0 !important;
+}
+.button--sort .sort-icon.sort-unsorted {
+  background: url("../image/icons/icon-sort-chevrons-24.svg");
+}
+.button--sort .sort-icon.sort-asc {
+  background: url("../image/icons/icon-sort-chevrons-ascending-24.svg");
+}
+.button--sort .sort-icon.sort-desc {
+  background: url("../image/icons/icon-sort-chevrons-descending-24.svg");
+}
+
+.container-pagination {
+  display: flex;
+}
+.container-pagination .button {
+  border-radius: 0;
+  border-left-width: 0;
+  min-width: 3rem;
+}
+.container-pagination .button:first-of-type {
+  border-radius: 0.5rem 0 0 0.5rem;
+  border-left-width: 1px;
+}
+.container-pagination .button:last-of-type {
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+.container-pagination .button:only-of-type {
+  border-radius: 0.5rem;
+  border-left-width: 1px;
+}/*# sourceMappingURL=buttons.css.map */

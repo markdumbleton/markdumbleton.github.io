@@ -1,0 +1,217 @@
+// SCSS
+@import "variables";
+
+input, select {
+	border: 1px solid $primary50;
+	padding: calc(($gap__3) + 1px);
+	color: $primary100;
+	border-radius: $border-radius__default;
+	font-family: $font-family__text-font;
+	font-size: $font-size__base;
+	font-weight: $font-weight__400;
+	line-height: $line-height__120;
+	display: block;
+	min-height: 50px;
+	box-sizing: border-box;
+	width: 100%;
+	transition-duration: $transition-duration__1;
+	transition-property: box-shadow, background-color, border-color, color;
+	transition-timing-function: ease-out;
+	&:hover {
+		border-color: $primary100;
+		padding: calc(($gap__3) + 0px);
+		border-width: 2px;
+	}
+	&:focus {
+		outline: none;
+		box-shadow: $box-shadow__focus;
+	}
+	&::placeholder {
+		color: $primary50;
+	}
+}
+
+
+
+.container-select {
+  position: relative;
+  select {
+    appearance: none;
+    cursor: pointer;
+    padding-right: calc((($gap__3) * 2) + ($icon-size__regular) + 1px);
+  }
+  .icon-dropdown {
+    position: absolute;
+    top: 50%;
+    right: calc(($gap__3) + 1px);
+    display: flex;
+    gap: .5rem;
+    pointer-events: none;
+    translate: 0 -50%;
+    svg {
+      width: $icon-size__regular;
+      height: $icon-size__regular;
+    }
+  }
+  &:hover {
+    .select {
+      padding-right: calc((($gap__3) * 2) + ($icon-size__regular) + 1px);
+    }
+	}
+}
+
+.form-group {
+	position: relative;
+	margin-bottom: $gap__5;
+}
+
+hr.dotted {
+	border: dotted #ddd;
+	border-width: 3px 0 0;
+	clear: both;
+	margin: 22px 0 21px;
+	height: 0;
+}
+
+.divider--dotted li:not(:last-child) {
+	border-bottom: 3px dotted $primary20;
+}
+
+.divider--dotted li {
+	padding: $gap__4 0;
+}
+
+
+
+
+
+
+// .custom-select {
+// 	position: relative;
+// 	white-space: nowrap;
+// }
+// select {
+//   // A reselectstyles, including removing the default dropdown arrow
+//   appearance: none;
+//   background-color: transparent;
+//   border: 1px solid $primary50;
+//   padding: 0 1em 0 0;
+//   margin: 0;
+//   width: 100%;
+//   font-family: inherit;
+//   font-size: inherit;
+//   cursor: inherit;
+//   line-height: inherit;
+
+//   // Stack above custom arrow
+//   z-index: 1;
+
+//   // Remove dropdown arrow in IE10 & IE11
+//   // @link https://www.filamentgroup.com/lab/select-css.html
+//   &::-ms-expand {
+//     display: none;
+//   }
+
+//   // Remove focus outline, will add on alternate element
+//   outline: none;
+// } 
+
+// .select {
+//   // display: grid;
+//   // grid-template-areas: "select";
+//   align-items: center;
+//   position: relative;
+
+//   select,
+//   &::after {
+//     grid-area: select;
+//   }
+
+//   min-width: 15ch;
+//   max-width: 30ch;
+
+//   border: 1px solid var(--select-border);
+//   border-radius: 0.25em;
+//   padding: 0.25em 0.5em;
+
+//   font-size: 1.25rem;
+//   cursor: pointer;
+//   line-height: 1.1;
+
+//   // Optional styles
+//   // remove for transparency
+//   background-color: #fff;
+//   background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+
+//   // Custom arrow
+//   &:not(.select--multiple)::after {
+//     content: "";
+//     justify-self: end;
+//     width: 0.8em;
+//     height: 0.5em;
+//     background-color: var(--select-arrow);
+//     clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+//   }
+// }
+
+// // Interim solution until :focus-within has better support
+// select:focus + .focus {
+//   position: absolute;
+//   top: -1px;
+//   left: -1px;
+//   right: -1px;
+//   bottom: -1px;
+//   border: 2px solid var(--select-focus);
+//   border-radius: inherit;
+// }
+
+// select[multiple] {
+//   padding-right: 0;
+
+//   /*
+//    * Safari will not reveal an option
+//    * unless the select height has room to 
+//    * show all of it
+//    * Firefox and Chrome allow showing 
+//    * a partial option
+//    */
+//   height: 6rem;
+
+//   option {
+//     white-space: normal;
+
+//     // Only affects Chrome
+//     outline-color: var(--select-focus);
+//   }
+
+//   /* 
+//    * Experimental - styling of selected options
+//    * in the multiselect
+//    * Not supported crossbrowser
+//    */
+//   //   &:not(:disabled) option {
+//   //     border-radius: 12px;
+//   //     transition: 120ms all ease-in;
+
+//   //     &:checked {
+//   //       background: linear-gradient(hsl(242, 61%, 76%), hsl(242, 61%, 71%));
+//   //       padding-left: 0.5em;
+//   //       color: black !important;
+//   //     }
+//   //   }
+// }
+
+// .select--disabled {
+//   cursor: not-allowed;
+//   background-color: #eee;
+//   background-image: linear-gradient(to top, #ddd, #eee 33%);
+// }
+
+// label {
+//   font-size: 1.125rem;
+//   font-weight: 500;
+// }
+
+// .select + label {
+//   margin-top: 2rem;
+// }

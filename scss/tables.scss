@@ -1,0 +1,162 @@
+// SCSS
+@import "variables";
+
+.table-container {
+    overflow-x: auto;
+    position: relative;
+    &.table-overflow {
+        // box-shadow: inset 0 0 20px $primary100;
+        box-shadow: inset -12px 0 12px -6px $primary30; 
+        // box-shadow: inset -12px 0 12px -6px rgba(var($primary100), 0.5);
+    }
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    min-width: 800px;
+    table-layout: auto;
+    th, td {
+        // padding: 0 $gap__2;
+        text-align: left;
+        white-space: nowrap;
+        // max-width: 10rem;
+        height: 3rem; // This works as min-height
+        font-size: $font-size__small;
+        &.left {
+            text-align: left;
+        }
+        &.center {
+            text-align: center;
+        }
+        div {
+            display: flex; 
+            align-items: center;
+            gap: $gap__2;
+        }
+        .link {
+            font-size: $font-size__base;
+            overflow: hidden;
+            display: -webkit-box;
+            // display: inline-flex;
+            line-clamp: 2;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            text-overflow: ellipsis;
+        }
+        .button--sort {
+            padding: $gap__2 $gap__2 !important;
+        }
+    }
+    th {
+        font-weight: $font-weight__600;
+        line-height: $line-height__120;
+        padding: 0 $gap__2;
+    }
+    td {
+        // padding-left: $gap__4;
+        // padding-right: $gap__4;
+        padding: $gap__1 $gap__4;
+        // max-width: 10rem; /* Allow wrapping */
+        // white-space: normal; /* Allow wrapping */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        // display: -webkit-box;
+        // -webkit-line-clamp: 2; /* Limit to 2 lines */
+        // -webkit-box-orient: vertical;
+    }    
+    th:first-child,
+    td:first-child { /* Sticky first column */
+        position: sticky;
+        left: 0;
+        text-align: left;
+        padding-left: $gap__2;
+        padding-right: $gap__2;
+        // background: blue;
+        z-index: 2;
+        // width: 30%;
+        // max-width: 100%;
+        // white-space: wrap;
+
+        white-space: normal; /* Allow wrapping */
+        // width: 1px; /* Prevent stretching */
+        /* Small screens */
+        @media all and (max-width: $screen-width__600) {
+            width: 1px; /* Prevent stretching */
+            // a {
+            //     font-size: $font-size__small;
+            // }
+        }
+
+        // transition: background-color 0.3s ease;
+        &.scrolled { /* Background color change on scroll */
+            background-color: $neutral-blue30;
+            border-right: 1px solid $primary50;
+            z-index: 3;
+        }
+    }
+    // td:first-child {
+    //     background: white;
+    // }
+    
+    thead {
+        th { /* Sticky header */
+            position: sticky;
+            top: 0;
+            // background-color: $neutral-blue30;
+            mix-blend-mode: multiply;
+            z-index: 2;
+            border-bottom: 1px solid $primary50;
+            &:first-child {
+                // background-color: red;
+                mix-blend-mode: normal;
+            }
+        }
+    }
+    tbody {
+        tr:hover { /* Add hover effect to table rows */
+            background-color: $neutral-blue20 !important; /* Light highlight color */
+            mix-blend-mode: multiply;
+            // transition: background-color $transition-duration__2 ease;
+        }
+        td {
+            border-bottom: 1px dashed $primary20;
+        }
+    }
+    &.table-materials {
+        th:first-child,
+        td:first-child {
+            width: 1px; // This ensures the image is fitting the table cell
+        }
+        td:nth-child(2) {
+            white-space: normal;
+        }
+    }
+    &.table-users {
+        th:first-child,
+        td:first-child {
+            width: 30%; // This allows the users name to use more space in the table
+        }
+    }
+    &.table-data {
+        td:first-child {
+            white-space: nowrap;
+            padding-left: $gap__4;
+            padding-right: $gap__4;
+            // max-width: 30%;  // This limits the label in the first column to allow for overflow on mobile
+        }
+    }
+    @media all and (max-width: $screen-width__600) {
+        // th, td {
+        //     max-width: 9rem;
+        // }
+        th:first-child,
+        td:first-child {
+            width: 1px !important;
+        }
+        .link {
+            font-size: $font-size__small !important;
+        }
+    }
+}

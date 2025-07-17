@@ -1,0 +1,94 @@
+@import "variables";
+
+.form__information,
+.badge {
+	// display: flex;
+	align-items: center;
+	// gap: $gap__2;
+	border-width: 1px;
+	border-style: solid;
+	padding: 1px $gap__2;
+	background-color: transparent;
+	// min-width: $icon-size__medium;
+	svg {
+		height: $icon-size__small;
+		width: $icon-size__small;
+	}
+}
+
+// Information
+.form__information {
+	flex-wrap: wrap;
+	font-weight: $font-weight__400;
+	font-size: $font-size__small;
+	border-radius: $border-radius__default;
+	border-color: $primary20;
+	line-height: $line-height__default;
+}
+
+// Badge
+.badge--group {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
+	align-items: center;
+}
+.badge {
+	display: inline-flex;
+    min-height: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0 $gap__2;
+	background-color: $isadora-pink;
+    border-radius: $border-radius__default;
+    border-color: $primary100;
+	color: $primary100;
+    font-size: $font-size__xsmall;
+    font-weight: $font-weight__700;
+	line-height: $line-height__120;
+	&.success {
+		background-color: $validation-green20;
+		border-color: $validation-green100;
+	}
+	&.information {
+		background-color: $primary20;
+	}
+	&.error {
+		background-color: $validation-red20;
+		border-color: $validation-red100;
+	}
+} 
+
+
+//Progress
+/* OEH */
+progress[value] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 0.5rem;
+	&::-webkit-progress-bar {
+		background-color: $primary10;
+	}
+	&::-webkit-progress-value {
+		background-color: $primary100;
+	}
+	&.warning {
+		// &::-webkit-progress-bar {
+		// 	// background-color: yellow;
+		// }
+		&::-webkit-progress-value {
+			background-color: $validation-orange100;
+		}
+	}
+	&.rounded {
+		&::-webkit-progress-bar {
+			border-radius: $border-radius__small;
+		}
+		&::-webkit-progress-value {
+			border-radius: $border-radius__small 0 0 $border-radius__small;
+		}
+	}
+}
+
+// style="display: inline-block; padding: 4px 12px; background-color: #e0f7fa; color: #00796b; border-radius: 999px; font-size: 0.9em;

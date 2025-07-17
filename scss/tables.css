@@ -1,0 +1,119 @@
+.table-container {
+  overflow-x: auto;
+  position: relative;
+}
+.table-container.table-overflow {
+  box-shadow: inset -12px 0 12px -6px #B3BDC8;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  min-width: 800px;
+  table-layout: auto;
+}
+table th, table td {
+  text-align: left;
+  white-space: nowrap;
+  height: 3rem;
+  font-size: 0.875rem;
+}
+table th.left, table td.left {
+  text-align: left;
+}
+table th.center, table td.center {
+  text-align: center;
+}
+table th div, table td div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+table th .link, table td .link {
+  font-size: 1rem;
+  overflow: hidden;
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+table th .button--sort, table td .button--sort {
+  padding: 0.5rem 0.5rem !important;
+}
+table th {
+  font-weight: 600;
+  line-height: 120%;
+  padding: 0 0.5rem;
+}
+table td {
+  padding: 0.25rem 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+table th:first-child,
+table td:first-child { /* Sticky first column */
+  position: sticky;
+  left: 0;
+  text-align: left;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  z-index: 2;
+  white-space: normal; /* Allow wrapping */
+  /* Small screens */
+}
+@media all and (max-width: 37.5rem) {
+  table th:first-child,
+  table td:first-child {
+    width: 1px; /* Prevent stretching */
+  }
+}
+table th:first-child.scrolled,
+table td:first-child.scrolled { /* Background color change on scroll */
+  background-color: #eff3f3;
+  border-right: 1px solid #8090A3;
+  z-index: 3;
+}
+table thead th { /* Sticky header */
+  position: sticky;
+  top: 0;
+  mix-blend-mode: multiply;
+  z-index: 2;
+  border-bottom: 1px solid #8090A3;
+}
+table thead th:first-child {
+  mix-blend-mode: normal;
+}
+table tbody tr:hover { /* Add hover effect to table rows */
+  background-color: #f4f7f7 !important; /* Light highlight color */
+  mix-blend-mode: multiply;
+}
+table tbody td {
+  border-bottom: 1px dashed #CCD3DA;
+}
+table.table-materials th:first-child,
+table.table-materials td:first-child {
+  width: 1px;
+}
+table.table-materials td:nth-child(2) {
+  white-space: normal;
+}
+table.table-users th:first-child,
+table.table-users td:first-child {
+  width: 30%;
+}
+table.table-data td:first-child {
+  white-space: nowrap;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+@media all and (max-width: 37.5rem) {
+  table th:first-child,
+  table td:first-child {
+    width: 1px !important;
+  }
+  table .link {
+    font-size: 0.875rem !important;
+  }
+}/*# sourceMappingURL=tables.css.map */

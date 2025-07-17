@@ -1,0 +1,50 @@
+@import "variables";
+
+// Accordion
+.accordion {
+  margin-top: $gap__6;
+  padding: 0;
+  width: 30rem;
+}
+
+.accordion-section {
+	padding-top: $gap__1;
+	padding-bottom: $gap__1;
+}
+
+.accordion > * + * {
+  border-top: 1px dashed $primary20;
+}
+
+.button--accordion {
+	width: 100%;
+	justify-content: space-between;
+	.button--icon-right {
+		transform: rotate(-90deg);
+		transition: $transition-duration__2;
+	}
+}
+
+.button--accordion[aria-expanded="true"] {
+	.button--icon-right {
+  	transform: rotate(90deg);
+	}
+}
+
+.accordion-panel {
+  margin-top: $gap__2;
+	margin-bottom: $gap__2;
+	margin-left: $gap__4;
+	visibility: visible;
+  opacity: 1;
+  // padding: 1em 1.5em;
+	background-color: red;
+	transition: $transition-duration__2;
+}
+
+/* For Edge bug https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/4806035/ */
+.accordion-panel[hidden] {
+  // display: none;
+	visibility: hidden;
+  opacity: 0;
+}

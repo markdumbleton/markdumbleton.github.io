@@ -1,0 +1,76 @@
+ul.list--group--outline li {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: $gap__4;
+	border-radius: $border-radius__default;
+	padding: $gap__3 $gap__4;
+	background-color: transparent;
+	color: $primary100;
+	border: 1px solid $primary20;
+	transition-duration: $transition-duration__1;
+	transition-property: box-shadow, background-color, border-color;
+	transition-timing-function: ease-out;
+	cursor: pointer;
+	&:hover,
+	&.checked {
+		background-color: $primary10;
+		mix-blend-mode: multiply;
+		// border-color: $primary100;
+	}
+	&:focus {
+		outline: none;
+		box-shadow: $box-shadow__focus;
+	}
+	&:disabled {
+		background-color: transparent;
+		color: $primary50;
+		border-color: $primary50;
+	}
+	.form__label {
+		padding: $gap__2;
+		padding-left: calc($gap__2 + $gap__2 + $icon-size__regular);
+		&:before {
+			left: $gap__3;
+		}
+	}
+	.list--image {
+		img {
+			width: 72px;
+			border: 1px solid $primary20;
+			border-radius: $border-radius__large;
+		}
+	}
+	.list--label {
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 12px;
+		.list--title {
+			font-size: $font-size__medium;
+			.title__primary {
+				font-weight: $font-weight__700;
+			}
+			.title__secondary {
+				font-weight: $font-weight__400;
+			}
+		}
+		.form__sub-label {
+			font-size: $font-size__small;
+			font-weight: $font-weight__400;
+		}
+	}
+}
+
+/* Small screens */
+@media all and (max-width: 500px) {
+	// List Group
+	ul.list--group--outline li {
+		/* On small screens, we are no longer using row direction but column */
+		flex-direction: column;
+		.list--image {
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,118 @@
+// Breakpoints
+$screen-width__320: 20rem; //320px
+$screen-width__480: 30rem; //480px
+$screen-width__600: 37.5rem; //600px
+$screen-width__840: 52.5rem; //840px;
+$screen-width__1024: 64rem; //1024px
+$screen-width__1600: 100rem; //1600px
+
+// Typography
+$font-family__text-font: "Open Sans";
+$font-family__display-font: "DM Serif Display";
+
+$font-size__xsmall: 0.75rem; //12px
+$font-size__small: 0.875rem; //14px
+$font-size__base: 1rem; //16px
+$font-size__medium: 1.25rem; //20px
+$font-size__large: 1.5rem; //24px
+$font-size__xlarge: 2rem; //32px
+$font-size__2xlarge: 2.75rem; //44px
+$font-size__3xlarge: 3.75rem; //60px
+$font-size__4xlarge: 5rem; //80px
+
+$font-weight__400: 400;
+$font-weight__600: 600;
+$font-weight__700: 700;
+
+$line-height__default: 150%;
+$line-height__120: 120%;
+$line-height__100: 100%;
+
+// Spacing
+$gap__0: 0rem; //0px
+$gap__1: 0.25rem; //4px
+$gap__2: 0.5rem; //8px
+$gap__3: 0.75rem; //12px
+$gap__4: 1rem; //16px
+$gap__5: 1.5rem; //24px
+$gap__6: 3rem; //48px
+
+// Border radius
+$border-radius__none: 0rem; //0px
+$border-radius__small: 0.25rem; //4px
+$border-radius__default: 0.5rem; //8px
+$border-radius__medium: 0.75rem; //12px
+$border-radius__large: 1rem; //16px
+$border-radius__xlarge: 1.5rem; //24px
+$border-radius__xxlarge: 5rem;
+$border-radius__round: 100%;
+
+// Icons
+$icon-size__xsmall: 0.75rem; //12px
+$icon-size__small: 1rem; //16px
+$icon-size__regular: 1.5rem; //24px
+$icon-size__medium: 2.25rem; //36px
+
+// Colour
+$primary100: #002147;
+$primary90: #1A3759;
+$primary80: #314B6A;
+$primary70: #4C647E;
+$primary60: #667A91;
+$primary50: #8090A3;
+$primary40: #99A6B5;
+$primary30: #B3BDC8;
+$primary20: #CCD3DA;
+$primary10: #E5E9ED;
+$primary0: #FFFFFF;
+
+$white100: #FFFFFF;
+$white90: #FFFFFFE6;
+$white80: #FFFFFFCC;
+$white70: #FFFFFFB3;
+$white60: #FFFFFF99;
+$white50: #FFFFFF80;
+$white40: #FFFFFF66;
+$white30: #FFFFFF4D;
+$white20: #FFFFFF33;
+$white10: #FFFFFF1A;
+$white0: #FFFFFF00;
+
+$neutral-blue100: #cad7d8;
+$neutral-blue50: #E5EBEC;
+$neutral-blue30: #eff3f3;
+$neutral-blue20: #f4f7f7;
+
+$electric-blue: #0043E0;
+$madrid-orange: #FD5821;
+$kipper-yellow: #FFE12D;
+$big-apple-green: #C8DC00;
+$isadora-pink: #F3A7B8;
+
+$validation-green100: #008000;
+$validation-green20: #00800033;
+$validation-orange100: #FF9914;
+$validation-orange20: #FF991433;
+$validation-red100: #D90429;
+$validation-red20: #D9042933;
+
+// Current org colours
+$class100: #a10062;
+$student100: #fc795f;
+$org100: #ffce53;
+
+// Box shadow
+$box-shadow__checkbox: 0px 0px 0px 3px $primary20;
+$box-shadow__focus: 0px 0px 0px 1px $white100, 0px 0px 0px 3px $primary100, 0px 0px 0px 4px $white100;
+$outline__focus: $primary100 solid 2px;
+$outline-offset__focus: 1px;
+
+// Elevations
+$box-shadow__elevation-3: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px 0px rgba(0, 0, 0, 0.30);
+
+
+// Transitions
+$transition-duration__1: 0.2s;
+$transition-duration__2: 0.3s;
+$transition-duration__3: 0.45s;
+$transition-duration__4: 0.7s;

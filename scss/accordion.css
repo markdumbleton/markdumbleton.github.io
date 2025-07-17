@@ -1,0 +1,43 @@
+.accordion {
+  margin-top: 3rem;
+  padding: 0;
+  width: 30rem;
+}
+
+.accordion-section {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.accordion > * + * {
+  border-top: 1px dashed #CCD3DA;
+}
+
+.button--accordion {
+  width: 100%;
+  justify-content: space-between;
+}
+.button--accordion .button--icon-right {
+  transform: rotate(-90deg);
+  transition: 0.3s;
+}
+
+.button--accordion[aria-expanded=true] .button--icon-right {
+  transform: rotate(90deg);
+}
+
+.accordion-panel {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-left: 1rem;
+  visibility: visible;
+  opacity: 1;
+  background-color: red;
+  transition: 0.3s;
+}
+
+/* For Edge bug https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/4806035/ */
+.accordion-panel[hidden] {
+  visibility: hidden;
+  opacity: 0;
+}/*# sourceMappingURL=accordion.css.map */

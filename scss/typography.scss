@@ -1,0 +1,38 @@
+// SCSS
+@import "variables";
+
+// Typography
+p {
+	margin: 0;
+}
+
+h1 {
+	font-family: $font-family__text-font;
+	font-size: $font-size__large;
+	font-weight: $font-weight__600;
+	line-height: $line-height__120;
+	&.small {
+		margin-top: $gap__3;
+		margin-bottom: $gap__2;
+	}
+}
+
+.large {
+	font-size: $font-size__2xlarge;
+	line-height: $line-height__120;
+}
+
+.sub__text {
+	font-size: $font-size__xsmall;
+}
+
+.weight__700 {
+	font-weight: $font-weight__700;
+}
+
+.label {
+	color: $primary100;
+	font-size: $font-size__base;
+	font-weight: $font-weight__700;
+	line-height: $line-height__default;
+}

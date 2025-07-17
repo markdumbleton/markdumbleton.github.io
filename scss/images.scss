@@ -1,0 +1,91 @@
+// SCSS
+@import "variables";
+
+// Lightbox
+.thumbnail {
+    border: 1px solid $primary20;
+    border-radius: $border-radius__default;
+    display: flex;
+    overflow: hidden;
+    img {
+        width: 50px;
+    }
+    &:hover {
+        border-color: $primary100;
+        box-shadow: 0 0 0 3px $primary20;
+    }
+    &:focus {
+        outline: none;
+		box-shadow: $box-shadow__focus;
+    }
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    img {
+        border: 4px solid $primary20;
+        box-shadow: $box-shadow__elevation-3;
+        border-radius: $border-radius__medium;
+        max-width: 90%;
+        max-height: 80%;
+    }
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+// Icons
+.icon-menu-stacked {
+    background: url('../image/icons/icon-menu-stacked-24.svg');
+}
+
+.icon-refresh {
+    background: url('../image/icons/icon-refresh-24.svg');
+}
+
+.icon-filter {
+    background: url('../image/icons/icon-filter-24.svg');
+}
+
+.icon-close {
+    background: url('../image/icons/icon-close-24.svg');
+}
+
+.icon-plus {
+    background: url('../image/icons/icon-plus-24.svg');
+}
+
+.icon-download {
+    background: url('../image/icons/icon-download-24.svg');
+}
+
+.icon-download-white {
+    background-image: url('../image/icons/icon-download-24.svg');
+    background-color: $white100;
+    -webkit-mask-image: url('../image/icons/icon-download-24.svg');
+    mask-image: url('../image/icons/icon-download-24.svg');
+    background-blend-mode: color;
+}
+
+.icon-plus-white {
+    background-image: url('../image/icons/icon-plus-24.svg');
+    background-color: $white100;
+    -webkit-mask-image: url('../image/icons/icon-plus-24.svg');
+    mask-image: url('../image/icons/icon-plus-24.svg');
+    background-blend-mode: color;
+}

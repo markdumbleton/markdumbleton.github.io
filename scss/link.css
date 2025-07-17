@@ -1,0 +1,75 @@
+.link {
+  color: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25rem;
+  cursor: pointer;
+  transition-duration: 0.2s;
+  transition-property: box-shadow, background-color, border-color, color;
+  transition-timing-function: ease-out;
+}
+.link:hover {
+  background-color: #E5E9ED;
+  mix-blend-mode: multiply;
+  text-decoration-thickness: 2px;
+}
+.link:focus {
+  outline: none;
+  box-shadow: 0px 0px 0px 1px #FFFFFF, 0px 0px 0px 3px #002147, 0px 0px 0px 4px #FFFFFF;
+}
+.link.link--icon {
+  align-items: center;
+  display: inline-flex;
+}
+.link.link--icon svg {
+  display: inline-block;
+  vertical-align: middle;
+  height: 0.75rem;
+  width: 0.75rem;
+  flex-shrink: 0;
+  fill: #8090A3;
+}
+.link.link--icon .link--icon-left {
+  margin-right: 0.25rem;
+}
+.link.link--icon .link--icon-right {
+  margin-left: 0.25rem;
+}
+
+.navigationLink {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 0.5rem;
+  color: #002147;
+  gap: 0rem;
+  inline-size: -moz-fit-content;
+  inline-size: fit-content;
+  padding: 0.75rem 1rem;
+  line-height: 120%;
+  text-decoration: none;
+  transition-duration: 0.2s;
+  transition-property: box-shadow, background-color, border-color, color;
+  transition-timing-function: ease-out;
+}
+.navigationLink, .navigationLink::before*, .navigationLink*::after, .navigationLink *::before, .navigationLink *::after {
+  box-sizing: border-box;
+}
+.navigationLink:focus {
+  outline: none;
+  box-shadow: 0px 0px 0px 1px #FFFFFF, 0px 0px 0px 3px #002147, 0px 0px 0px 4px #FFFFFF;
+}
+.navigationLink:hover {
+  background-color: #E5E9ED;
+  mix-blend-mode: multiply;
+}
+.navigationLink .primaryText {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.navigationLink .secondaryText {
+  display: block;
+  font-size: 0.75rem;
+}/*# sourceMappingURL=link.css.map */

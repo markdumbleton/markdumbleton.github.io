@@ -1,0 +1,80 @@
+input, select {
+  border: 1px solid #8090A3;
+  padding: calc(0.75rem + 1px);
+  color: #002147;
+  border-radius: 0.5rem;
+  font-family: "Open Sans";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 120%;
+  display: block;
+  min-height: 50px;
+  box-sizing: border-box;
+  width: 100%;
+  transition-duration: 0.2s;
+  transition-property: box-shadow, background-color, border-color, color;
+  transition-timing-function: ease-out;
+}
+input:hover, select:hover {
+  border-color: #002147;
+  padding: calc(0.75rem + 0px);
+  border-width: 2px;
+}
+input:focus, select:focus {
+  outline: none;
+  box-shadow: 0px 0px 0px 1px #FFFFFF, 0px 0px 0px 3px #002147, 0px 0px 0px 4px #FFFFFF;
+}
+input::-moz-placeholder, select::-moz-placeholder {
+  color: #8090A3;
+}
+input::placeholder, select::placeholder {
+  color: #8090A3;
+}
+
+.container-select {
+  position: relative;
+}
+.container-select select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  cursor: pointer;
+  padding-right: calc(3rem + 1px);
+}
+.container-select .icon-dropdown {
+  position: absolute;
+  top: 50%;
+  right: calc(0.75rem + 1px);
+  display: flex;
+  gap: 0.5rem;
+  pointer-events: none;
+  translate: 0 -50%;
+}
+.container-select .icon-dropdown svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.container-select:hover .select {
+  padding-right: calc(3rem + 1px);
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+hr.dotted {
+  border: dotted #ddd;
+  border-width: 3px 0 0;
+  clear: both;
+  margin: 22px 0 21px;
+  height: 0;
+}
+
+.divider--dotted li:not(:last-child) {
+  border-bottom: 3px dotted #CCD3DA;
+}
+
+.divider--dotted li {
+  padding: 1rem 0;
+}/*# sourceMappingURL=form.css.map */

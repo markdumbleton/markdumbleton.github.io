@@ -1,0 +1,86 @@
+.thumbnail {
+  border: 1px solid #CCD3DA;
+  border-radius: 0.5rem;
+  display: flex;
+  overflow: hidden;
+}
+.thumbnail img {
+  width: 50px;
+}
+.thumbnail:hover {
+  border-color: #002147;
+  box-shadow: 0 0 0 3px #CCD3DA;
+}
+.thumbnail:focus {
+  outline: none;
+  box-shadow: 0px 0px 0px 1px #FFFFFF, 0px 0px 0px 3px #002147, 0px 0px 0px 4px #FFFFFF;
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+.lightbox img {
+  border: 4px solid #CCD3DA;
+  box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 0.75rem;
+  max-width: 90%;
+  max-height: 80%;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+.icon-menu-stacked {
+  background: url("../image/icons/icon-menu-stacked-24.svg");
+}
+
+.icon-refresh {
+  background: url("../image/icons/icon-refresh-24.svg");
+}
+
+.icon-filter {
+  background: url("../image/icons/icon-filter-24.svg");
+}
+
+.icon-close {
+  background: url("../image/icons/icon-close-24.svg");
+}
+
+.icon-plus {
+  background: url("../image/icons/icon-plus-24.svg");
+}
+
+.icon-download {
+  background: url("../image/icons/icon-download-24.svg");
+}
+
+.icon-download-white {
+  background-image: url("../image/icons/icon-download-24.svg");
+  background-color: #FFFFFF;
+  -webkit-mask-image: url("../image/icons/icon-download-24.svg");
+  mask-image: url("../image/icons/icon-download-24.svg");
+  background-blend-mode: color;
+}
+
+.icon-plus-white {
+  background-image: url("../image/icons/icon-plus-24.svg");
+  background-color: #FFFFFF;
+  -webkit-mask-image: url("../image/icons/icon-plus-24.svg");
+  mask-image: url("../image/icons/icon-plus-24.svg");
+  background-blend-mode: color;
+}/*# sourceMappingURL=images.css.map */

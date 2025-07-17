@@ -1,0 +1,209 @@
+// SCSS
+@import "variables";
+
+.button {
+	position: relative;
+	background-color: transparent;
+	background-image: none;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: $border-radius__default;
+	font-family: $font-family__text-font;
+	font-size: $font-size__base;
+	font-weight: $font-weight__400;
+	line-height: $line-height__120;
+	min-height: $gap__6;
+	padding: $gap__3 $gap__4;
+	text-align: center;
+	text-decoration: none;
+	touch-action: manipulation;
+	cursor: pointer;
+	transition-duration: $transition-duration__1;
+	transition-property: box-shadow, background-color, border-color, color;
+	transition-timing-function: ease-out;
+	&.button--icon {
+		align-items: center;
+		display: inline-flex;
+		svg {
+			display: inline-block;
+			vertical-align: middle;
+			height: $icon-size__regular;
+			width: $icon-size__regular;
+			flex-shrink: 0;
+		}
+		.button--icon-left {
+			margin-right: $gap__2;
+		}
+		.button--icon-right {
+			margin-left: $gap__2;
+		}
+	}
+	&.button--large {
+		font-size: $font-size__large;
+		min-height: 4.5rem;
+		padding: $gap__4 $gap__5;
+		&.button--icon {
+			svg {
+				height: $icon-size__regular;
+				width: $icon-size__regular;
+			}
+			.button--icon-left {
+				margin-right: $gap__3;
+			}
+			.button--icon-right {
+				margin-left: $gap__3;
+			}
+		}
+	}
+	&.button--small {
+		font-size: $font-size__small;
+		min-height: 2.25rem;
+		padding: $gap__2 $gap__3;
+		gap: $gap__2;
+		&.button--icon {
+			svg {
+				height: $icon-size__small;
+				width: $icon-size__small;
+			}
+			.button--icon-left {
+				margin-right: $gap__2;
+			}
+			&.button--icon-right {
+				margin-left: $gap__2;
+			}
+		}
+	}
+	&:focus {
+		outline: none;
+		box-shadow: $box-shadow__focus;
+	}
+	// &:focus:not(:focus-visible) {
+	// 	box-shadow: none;
+	// }
+	// &:focus-visible {
+	// 	box-shadow: $box-shadow__focus;
+	// }
+	&:disabled {
+		cursor: not-allowed;
+	}
+}
+
+.button--filled {
+	background-color: $primary100;
+	color: $white100;
+	border-color: $white30;
+	&.button--icon {
+		svg {
+			fill: $white100;
+		}
+	}
+	&:hover {
+		background-color: $primary90;
+	}
+	&:focus {
+		border-color: $white30;
+	}
+	&:disabled {
+		background-color: $primary40;
+	}
+}
+
+.button--outline {
+	background-color: transparent;
+	color: $primary100;
+	border-color: $primary50;
+	&.button--icon {
+		svg {
+			fill: $primary100;
+		}
+	}
+	&:hover {
+		background-color: $primary10;
+		mix-blend-mode: multiply;
+		border-color: $primary100;
+	}
+	&:focus {
+		border-color: $primary20;
+	}
+	&:disabled {
+		background-color: transparent;
+		color: $primary50;
+		border-color: $primary50;
+		&.button--icon {
+			svg {
+				fill: $primary50;
+			}
+		}
+	}
+	&.button--active {
+		background-color: $primary100;
+		color: $white100;
+		font-weight: $font-weight__700;
+	}
+}
+
+.button--transparent {
+	background-color: transparent;
+	color: $primary100;
+	border-color: transparent;
+	&.button--icon {
+		svg {
+			fill: $primary100;
+		}
+	}
+	&:hover {
+		background-color: $primary10;
+		mix-blend-mode: multiply;
+		border-color: transparent;
+	}
+	&:focus {
+		border-color: transparent;
+	}
+	&:disabled {
+		background-color: transparent;
+		color: $primary50;
+		border-color: transparent;
+		&.button--icon {
+			svg {
+				fill: $primary50;
+			}
+		}
+	}
+}
+
+.button--sort {
+    font-weight: $font-weight__600;
+    .sort-icon {
+        // display: block;
+        margin-left: 0 !important;
+        &.sort-unsorted {
+            background: url('../image/icons/icon-sort-chevrons-24.svg');
+        }
+        &.sort-asc {
+            background: url('../image/icons/icon-sort-chevrons-ascending-24.svg');
+        }
+        &.sort-desc {
+            background: url('../image/icons/icon-sort-chevrons-descending-24.svg');
+        }
+    }
+}
+
+.container-pagination {
+	display: flex;
+	.button {
+		border-radius: 0;
+		border-left-width: 0;
+		min-width: $gap__6;
+		&:first-of-type {
+			border-radius: $border-radius__default 0 0 $border-radius__default;
+			border-left-width: 1px;
+		}
+		&:last-of-type {
+			border-radius: 0 $border-radius__default $border-radius__default 0;
+		}
+		&:only-of-type {
+			border-radius: $border-radius__default;
+			border-left-width: 1px;
+		}
+	}
+}
