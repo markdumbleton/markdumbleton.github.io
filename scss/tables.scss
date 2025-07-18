@@ -139,12 +139,72 @@ table {
             width: 30%; // This allows the users name to use more space in the table
         }
     }
-    &.table-data {
+    &.table-no-checkbox {
         td:first-child {
             white-space: nowrap;
             padding-left: $gap__4;
             padding-right: $gap__4;
             // max-width: 30%;  // This limits the label in the first column to allow for overflow on mobile
+        }
+    }
+    &.table-gradebook {    
+        tr td,
+        tr th {
+            background-color: #ffffff;
+            width: 150px;
+        }
+        // tr th:nth-child(4n+3):not(:first-child),
+        // tr th:nth-child(4n+4):not(:first-child) {
+        //     background-color: $neutral-blue50;
+        //     border-left: 1px solid red;
+        //     border-right: 1px solid red;
+        // }
+        tr th:nth-child(4n+3):not(:first-child),
+        tr th:nth-child(4n+4):not(:first-child),
+        tr td:nth-child(4n+3):not(:first-child),
+        tr td:nth-child(4n+4):not(:first-child) {
+            background-color: $neutral-blue50;
+        }
+        tr th:nth-child(4n+3):not(:first-child),
+        tr td:nth-child(4n+3):not(:first-child) {
+            border-left: 1px solid $primary50;
+            border-right: 1px solid $primary50;
+        }
+        tr th:nth-child(4n+4):not(:first-child),
+        tr td:nth-child(4n+4):not(:first-child) {
+            border-right: 1px solid $primary50;
+        }
+        .class-average {
+            td {
+                background-color: $kipper-yellow;
+            }
+            td:nth-child(4n+3):not(:first-child),
+            td:nth-child(4n+4):not(:first-child) {
+                background-color: $kipper-yellow-dark;
+            }
+        }
+        .extra-table-header {
+            th:not(:first-child) {
+                background-color: $white100 !important;
+            }
+            th:nth-child(odd):not(:first-child) {
+                background-color: $neutral-blue50 !important;
+                border-top: 1px solid $primary50;
+                border-left: 1px solid $primary50;
+                border-right: 1px solid $primary50;
+                border-radius: $border-radius__default $border-radius__default 0 0;
+            }
+            th:nth-child(even):not(:first-child) {
+                border-left-width: 0;
+                border-right-width: 0;
+            }
+        }
+        // tr td:nth-child(even),
+        // tr th:nth-child(even) {
+        //     background-color: #ffffff;
+        // }
+        .gradebook-section {
+            justify-content: center;
         }
     }
     @media all and (max-width: $screen-width__600) {

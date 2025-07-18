@@ -324,10 +324,54 @@ table.table-users th:first-child,
 table.table-users td:first-child {
   width: 30%;
 }
-table.table-data td:first-child {
+table.table-no-checkbox td:first-child {
   white-space: nowrap;
   padding-left: 1rem;
   padding-right: 1rem;
+}
+table.table-gradebook tr td,
+table.table-gradebook tr th {
+  background-color: #ffffff;
+  width: 150px;
+}
+table.table-gradebook tr th:nth-child(4n+3):not(:first-child),
+table.table-gradebook tr th:nth-child(4n+4):not(:first-child),
+table.table-gradebook tr td:nth-child(4n+3):not(:first-child),
+table.table-gradebook tr td:nth-child(4n+4):not(:first-child) {
+  background-color: #E5EBEC;
+}
+table.table-gradebook tr th:nth-child(4n+3):not(:first-child),
+table.table-gradebook tr td:nth-child(4n+3):not(:first-child) {
+  border-left: 1px solid #8090A3;
+  border-right: 1px solid #8090A3;
+}
+table.table-gradebook tr th:nth-child(4n+4):not(:first-child),
+table.table-gradebook tr td:nth-child(4n+4):not(:first-child) {
+  border-right: 1px solid #8090A3;
+}
+table.table-gradebook .class-average td {
+  background-color: #FFE12D;
+}
+table.table-gradebook .class-average td:nth-child(4n+3):not(:first-child),
+table.table-gradebook .class-average td:nth-child(4n+4):not(:first-child) {
+  background-color: #FFE12D;
+}
+table.table-gradebook .extra-table-header th:not(:first-child) {
+  background-color: #FFFFFF !important;
+}
+table.table-gradebook .extra-table-header th:nth-child(odd):not(:first-child) {
+  background-color: #E5EBEC !important;
+  border-top: 1px solid #8090A3;
+  border-left: 1px solid #8090A3;
+  border-right: 1px solid #8090A3;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+table.table-gradebook .extra-table-header th:nth-child(even):not(:first-child) {
+  border-left-width: 0;
+  border-right-width: 0;
+}
+table.table-gradebook .gradebook-section {
+  justify-content: center;
 }
 @media all and (max-width: 37.5rem) {
   table th:first-child,
@@ -1086,6 +1130,20 @@ progress[value].rounded::-webkit-progress-value {
   width: 100%;
 }
 
+#copy-dialog {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #323232;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  display: none;
+  z-index: 1000;
+}
+
 .donut {
   --donut-spacing: 0;
   --donut-spacing-color: 255, 255, 255;
@@ -1313,18 +1371,4 @@ hr.solid {
 hr.solid.narrow {
   margin: 0 0.5rem;
   width: calc(100% - 1rem);
-}
-
-#copy-dialog {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #323232;
-  color: white;
-  padding: 0.75rem 1rem;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  display: none;
-  z-index: 1000;
 }/*# sourceMappingURL=styles.css.map */

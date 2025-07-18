@@ -26,7 +26,7 @@ html {
 		padding: $gap__1;
 	}
 }
- 
+
 *,
 :after,
 :before {
@@ -91,18 +91,3 @@ hr.solid {
         width: calc(100% - $gap__4);
     }
 }
-
-
-#copy-dialog {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #323232;
-    color: white;
-    padding: $gap__3 $gap__4;
-    border-radius: $border-radius__default;
-    font-size: $font-size__base;
-    display: none;
-    z-index: 1000;
-} 
