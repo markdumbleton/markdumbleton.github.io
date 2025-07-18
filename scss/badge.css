@@ -60,16 +60,19 @@ progress[value] {
   -moz-appearance: none;
        appearance: none;
   width: 100%;
-  height: 0.5rem;
+  height: 0.75rem;
 }
 progress[value]::-webkit-progress-bar {
-  background-color: #E5E9ED;
+  background-color: #cad7d8;
 }
 progress[value]::-webkit-progress-value {
   background-color: #002147;
 }
 progress[value].warning::-webkit-progress-value {
   background-color: #FF9914;
+}
+progress[value].success::-webkit-progress-value {
+  background-color: #008000;
 }
 progress[value].rounded::-webkit-progress-bar {
   border-radius: 0.25rem;

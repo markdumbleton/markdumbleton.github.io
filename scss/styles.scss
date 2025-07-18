@@ -12,7 +12,8 @@
 @import "accordion";
 @import "images";
 @import "modals";
-
+@import "charts";
+   
 
 /* Base styles */
 html {
@@ -25,7 +26,7 @@ html {
 		padding: $gap__1;
 	}
 }
-
+ 
 *,
 :after,
 :before {
@@ -104,4 +105,4 @@ hr.solid {
     font-size: $font-size__base;
     display: none;
     z-index: 1000;
-}
+} 

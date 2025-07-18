@@ -1,0 +1,112 @@
+// SCSS
+@import "variables";
+
+$donut-slices: (
+  first: $validation-green100,
+  second: $neutral-blue100,
+  third: #97C95C,
+  fourth: #1CB2F6,
+  fifth: #313638
+);
+
+.donut {
+//   --donut-size: $icon-size__medium;
+//   --donut-border-width: 20px;
+  
+  --donut-spacing: 0;
+  --donut-spacing-color: 255, 255, 255;
+  --donut-spacing-deg: calc(1deg * var(--donut-spacing));
+  
+  border-radius: 50%;
+  height: $icon-size__medium;
+    width: $icon-size__medium;
+//   margin: 40px;
+  position: relative;
+
+}
+
+.donut__label {
+  left: 50%;
+  line-height: 1.5;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+}
+
+.donut__label__heading {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.donut__label__sub {
+  color: #666666;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+}
+
+.donut__slice {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.donut__slice::before,
+.donut__slice::after {
+  border: $gap__2 solid rgba(0,0,0,0);
+  border-radius: 50%;
+  content: '';
+  height: 100%;
+  left:0;
+  position: absolute;
+  top: 0;
+  transform: rotate(45deg);
+  width: 100%;
+}
+
+.donut__slice::before {
+  border-width: calc(#{$gap__2} + 1px);
+  box-shadow: 0 0 1px 0 #{'rgba(var(--donut-spacing-color), calc(100 * var(--donut-spacing)))'};
+}
+
+$slides-concat: '';
+
+@each $slice in $donut-slices {
+  $name: nth($slice, 1);
+  $color: nth($slice, 2);
+  $i: index($donut-slices, $slice);
+
+  @if $i > 1 {
+    .donut__slice__#{$name} {
+      --#{$name}-start: calc(#{$slides-concat});
+      --#{$name}-check: max(calc(var(--#{$name}-start) - .5), 0);
+      clip-path: inset(0 calc(50% * (var(--#{$name}-check) / var(--#{$name}-check))) 0 0);
+    }
+  }
+  @else {
+    .donut__slice__#{$name} {
+      --#{$name}-start: 0;
+    }
+  }
+
+  .donut__slice__#{$name}::before {
+    border-top-color: #{'rgba(var(--donut-spacing-color), calc(100 * var(--donut-spacing)))'};
+    transform: rotate(calc(360deg * var(--#{$name}-start) + 45deg));
+  }
+
+  .donut__slice__#{$name}::after {
+    border-top-color: rgba($color, 1);
+    border-right-color: rgba($color, calc(100 * (var(--#{$name}) - .25)));
+    border-bottom-color: rgba($color, calc(100 * (var(--#{$name}) - .5)));
+    border-left-color: rgba($color, calc(100 * (var(--#{$name}) - .75)));
+    transform: rotate(calc(360deg * var(--#{$name}-start) + 45deg + var(--donut-spacing-deg)));
+  }
+
+  @if $i == 1 {
+    $slides-concat: var(--#{$name});
+  }
+  @else {
+    $slides-concat: $slides-concat + ' + ' + var(--#{$name});
+  }
+}
