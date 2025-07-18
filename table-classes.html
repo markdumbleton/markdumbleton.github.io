@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Classes</title>
+    <link rel="stylesheet" href="scss/styles.css" />
+</head>
+<body>
+    <div class="container row">
+        <div class="container column title">
+            <h1>Classes</h1>
+            <p id="row-count" class="sub__text">Showing 0 of 0</p>
+        </div>
+        <button class="button button--filled button--icon" type="button">
+            <svg class="button--icon-left icon-plus-white"></svg>Add
+        </button>
+    </div>
+    
+    <div class="container row search-filter-refresh">
+        <input type="text" id="searchInput" placeholder="Search by class name, teacher or class code">
+        <!-- <button id="filterBtn">Filters<span class="filter-badge"></span></button> -->
+        <button id="filterBtn" class="button button--outline button--icon">
+            <svg class="button--icon-left icon-filter"></svg>Filter<span class="badge button--icon-right" style="display: none;">0</span>
+        </button>
+        <button class="button button--outline button--icon" type="button">
+            <svg class="button--icon-left icon-refresh"></svg>Refresh
+        </button>
+    </div>
+
+    <!-- Filter Modal -->
+    <div class="modal-overlay" id="filterModal">
+        <div class="modal">
+            <div class="modal-header">
+                <div class="modal-close">
+                    <button id="closeFilterModal" class="button button--transparent button--small button--icon">
+                        Close <svg class="button--icon button--icon-right icon-close"></svg>
+                    </button>
+                </div>
+                <div class="modal-title">
+                    <h2>Filter</h2>
+                    <p>Sub text</p>
+                </div>     
+            </div>
+
+            <div class="modal-content">
+                <div class="modal-section">
+                    <div class="label-container">
+                        <label>Date added</label>
+                        <p>Supporting text here</p>
+                    </div>
+                    <div class="modal-group-row">
+                        <div class="input-container">
+                            <label for="dateFrom">From:</label>
+                            <input type="date" id="dateFrom">
+                        </div>
+                        <div class="input-container">
+                            <label for="dateTo">To:</label>
+                            <input type="date" id="dateTo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button id="clearFilters" class="button button--outline">Clear filters</button>
+                <button id="applyFilters" class="button button--filled">Apply</button>
+            </div>
+            <!-- <div class="result-count" id="resultCount">0 results (out of 20)</div> -->
+        </div>
+    </div>
+
+    <div class="table-container">
+        <table id="data-table" class="table-users">
+            <thead>
+                <tr>
+                    <th>
+                        <div>
+                            <div class="form form--checkbox form--hide-label">
+                                <input id="select-all" type="checkbox" class="form__input" value="" />
+                                <label class="form__label" for="select-all">
+                                    <span>Hidden label</span>
+                                </label>
+                            </div>
+                            <button class="button button--small button--transparent button--icon button--sort">
+                                Name <svg class="button--icon-right sort-icon sort-unsorted"></svg>
+                            </button>
+                        </div>
+                    </th>
+                    <th>
+                        <button class="button button--small button--transparent button--icon button--sort">
+                            Class code <svg class="button--icon-right sort-icon sort-unsorted"></svg>
+                        </button>
+                    </th>
+                    <th>
+                        <button class="button button--small button--transparent button--icon button--sort">
+                            Teacher <svg class="button--icon-right sort-icon sort-unsorted"></svg>
+                        </button>
+                    </th>
+                    <th>
+                        <button class="button button--small button--transparent button--icon button--sort">
+                            Status <svg class="button--icon-right sort-icon sort-unsorted"></svg>
+                        </button>
+                    </th>
+                    <th>
+                        <button class="button button--small button--transparent button--icon button--sort">
+                            Date added <svg class="button--icon-right sort-icon sort-unsorted"></svg>
+                        </button>
+                    </th>
+                    <th class="center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-status="Active" data-date="2025-07-26">
+                    <td data-field="name">
+                        <div>
+                            <div class="form form--checkbox form--hide-label">
+                                <input id="checkbox-1" type="checkbox" class="form__input row-checkbox" value="" data-row-id="1" />
+                                <label class="form__label" for="checkbox-1">
+                                    <span>Hidden label</span>
+                                </label>
+                            </div>
+                            <a class="link" href="#" target="_blank">Class 5A</a>
+                        </div>
+                    </td>
+                    <td data-field="id">
+                        <strong>C4kCd-</strong>4ZYnEP
+                        <button id="copy-btn" class="button button--small button--transparent button--icon" type="button" data-menu-id="menu1" data-align="right">
+                            <svg class="button--icon icon-copy"></svg>
+                        </button>
+                    </td>
+                    <td data-field="teacher">Matthew Patton</td>
+                    <td><span class="badge success">Active</span></td>
+                    <td>26 July 2025</td>
+                    <td class="center">
+                        <button class="button button--small button--transparent button--icon menu-button" type="button" data-menu-id="menu1" data-align="right">
+                            <svg class="button--icon icon-menu-stacked"></svg>
+                        </button>
+                    </td>
+                </tr>
+
+                <tr data-status="Active" data-date="2025-07-04">
+                    <td data-field="name">
+                        <div>
+                            <div class="form form--checkbox form--hide-label">
+                                <input id="checkbox-1" type="checkbox" class="form__input row-checkbox" value="" data-row-id="2" />
+                                <label class="form__label" for="checkbox-1">
+                                    <span>Hidden label</span>
+                                </label>
+                            </div>
+                            <a class="link" href="#" target="_blank">Class 4D</a>
+                        </div>
+                    </td>
+                    <td data-field="id">
+                        <strong>C4kCd-</strong>0nKTo9
+                        <button id="copy-btn" class="button button--small button--transparent button--icon" type="button" data-menu-id="menu1" data-align="right">
+                            <svg class="button--icon icon-copy"></svg>
+                        </button>
+                    </td>
+                    <td data-field="teacher">Regina Torres</td>
+                    <td><span class="badge success">Active</span></td>
+                    <td>04 July 2025</td>
+                    <td class="center">
+                        <button class="button button--small button--transparent button--icon menu-button" type="button" data-menu-id="menu1" data-align="right">
+                            <svg class="button--icon icon-menu-stacked"></svg>
+                        </button>
+                    </td>
+                </tr>
+
+                <tr data-status="Active" data-date="2025-07-03">
+                    <td data-field="name">
+                        <div>
+                            <div class="form form--checkbox form--hide-label">
+                                <input id="checkbox-1" type="checkbox" class="form__input row-checkbox" value="" data-row-id="3" />
+                                <label class="form__label" for="checkbox-1">
+                                    <span>Hidden label</span>
+                                </label>
+                            </div>
+                            <a class="link" href="#" target="_blank">Class 3D</a>
+                        </div>
+                    </td>
+                    <td data-field="id">
+                        <strong>C4kCd-</strong>07Yuma
+                        <button id="copy-btn" class="button button--small button--transparent button--icon" type="button" data-menu-id="menu1" data-align="right">
+                            <svg class="button--icon icon-copy"></svg>
+                        </button>
+                    </td>
+                    <td data-field="teacher">Wayne Walker</td>
+                    <td><span class="badge success">Active</span></td>
+                    <td>03 July 2025</td>
+                    <td class="center">
+                        <button class="button button--small button--transparent button--icon menu-button" type="button" data-menu-id="menu1" data-align="right">
+                            <svg class="button--icon icon-menu-stacked"></svg>
+                        </button>
+                    </td>
+                </tr>
+
+                <tr data-status="Active" data-date="2025-07-02">
+                    <td data-field="name">
+                        <div>
+                            <div class="form form--checkbox form--hide-label">
+                                <input id="checkbox-1" type="checkbox" class="form__input row-checkbox" value="" data-row-id="4" />
+                                <label class="form__label" for="checkbox-1">
+                                    <span>Hidden label</span>
+                                </label>
+                            </div>
+                            <a class="link" href="#" target="_blank">Class 4C</a>
+                        </div>
+                    </td>
+                    <td data-field="id">
+                        <strong>C4kCd-</strong>UFyvyt
+                        <button id="copy-btn" class="button button--small button--transparent button--icon" type="button" data-menu-id="menu1" data-align="right">
+                            <svg class="button--icon icon-copy"></svg>
+                        </button>
+                    </td>
+                    <td data-field="teacher">Sheila Livingston</td>
+                    <td><span class="badge success">Active</span></td>
+                    <td>02 July 2025</td>
+                    <td class="center">
+                        <button class="button button--small button--transparent button--icon menu-button" type="button" data-menu-id="menu1" data-align="right">
+                            <svg class="button--icon icon-menu-stacked"></svg>
+                        </button>
+                    </td>
+                </tr>
+
+                <tr data-status="Active" data-date="2025-04-13">
+                    <td data-field="name">
+                        <div>
+                            <div class="form form--checkbox form--hide-label">
+                                <input id="checkbox-1" type="checkbox" class="form__input row-checkbox" value="" data-row-id="5" />
+                                <label class="form__label" for="checkbox-1">
+                                    <span>Hidden label</span>
+                                </label>
+                            </div>
+                            <a class="link" href="#" target="_blank">Class 3D</a>
+                        </div>
+                    </td>
+                    <td data-field="id">
+                        <strong>C4kCd-</strong>xqBp3e
+                        <button id="copy-btn" class="button button--small button--transparent button--icon" type="button" data-menu-id="menu1" data-align="right">
+                            <svg class="button--icon icon-copy"></svg>
+                        </button>
+                    </td>
+                    <td data-field="teacher">Jasmine Meyers</td>
+                    <td><span class="badge success">Active</span></td>
+                    <td>13 April 2025</td>
+                    <td class="center">
+                        <button class="button button--small button--transparent button--icon menu-button" type="button" data-menu-id="menu1" data-align="right">
+                            <svg class="button--icon icon-menu-stacked"></svg>
+                        </button>
+                    </td>
+                </tr>
+
+                <tr data-status="Active" data-date="2025-03-14">
+                    <td data-field="name">
+                        <div>
+                            <div class="form form--checkbox form--hide-label">
+                                <input id="checkbox-1" type="checkbox" class="form__input row-checkbox" value="" data-row-id="6" />
+                                <label class="form__label" for="checkbox-1">
+                                    <span>Hidden label</span>
+                                </label>
+                            </div>
+                            <a class="link" href="#" target="_blank">Class 2D</a>
+                        </div>
+                    </td>
+                    <td data-field="id">
+                        <strong>C4kCd-</strong>HBUpXG
+                        <button id="copy-btn" class="button button--small button--transparent button--icon" type="button" data-menu-id="menu1" data-align="right">
+                            <svg class="button--icon icon-copy"></svg>
+                        </button>
+                    </td>
+                    <td data-field="teacher">Emily Krueger</td>
+                    <td><span class="badge success">Active</span></td>
+                    <td>14 March 2025</td>
+                    <td class="center">
+                        <button class="button button--small button--transparent button--icon menu-button" type="button" data-menu-id="menu1" data-align="right">
+                            <svg class="button--icon icon-menu-stacked"></svg>
+                        </button>
+                    </td>
+                </tr>
+
+                <tr data-status="Active" data-date="2025-03-02">
+                    <td data-field="name">
+                        <div>
+                            <div class="form form--checkbox form--hide-label">
+                                <input id="checkbox-1" type="checkbox" class="form__input row-checkbox" value="" data-row-id="7" />
+                                <label class="form__label" for="checkbox-1">
+                                    <span>Hidden label</span>
+                                </label>
+                            </div>
+                            <a class="link" href="#" target="_blank">Class 4B</a>
+                        </div>
+                    </td>
+                    <td data-field="id">
+                        <strong>C4kCd-</strong>IBHetn
+                        <button id="copy-btn" class="button button--small button--transparent button--icon" type="button" data-menu-id="menu1" data-align="right">
+                            <svg class="button--icon icon-copy"></svg>
+                        </button>
+                    </td>
+                    <td data-field="teacher">Craig Lowery</td>
+                    <td><span class="badge success">Active</span></td>
+                    <td>02 March 2025</td>
+                    <td class="center">
+                        <button class="button button--small button--transparent button--icon menu-button" type="button" data-menu-id="menu1" data-align="right">
+                            <svg class="button--icon icon-menu-stacked"></svg>
+                        </button>
+                    </td>
+                </tr>
+
+                <tr data-status="Active" data-date="2025-01-01">
+                    <td data-field="name">
+                        <div>
+                            <div class="form form--checkbox form--hide-label">
+                                <input id="checkbox-1" type="checkbox" class="form__input row-checkbox" value="" data-row-id="8" />
+                                <label class="form__label" for="checkbox-1">
+                                    <span>Hidden label</span>
+                                </label>
+                            </div>
+                            <a class="link" href="#" target="_blank">Class 3C</a>
+                        </div>
+                    </td>
+                    <td data-field="id">
+                        <strong>C4kCd-</strong>P9udYT
+                        <button id="copy-btn" class="button button--small button--transparent button--icon" type="button" data-menu-id="menu1" data-align="right">
+                            <svg class="button--icon icon-copy"></svg>
+                        </button>
+                    </td>
+                    <td data-field="teacher">Larry Evans</td>
+                    <td><span class="badge success">Active</span></td>
+                    <td>01 January 2025</td>
+                    <td class="center">
+                        <button class="button button--small button--transparent button--icon menu-button" type="button" data-menu-id="menu1" data-align="right">
+                            <svg class="button--icon icon-menu-stacked"></svg>
+                        </button>
+                    </td>
+                </tr>
+
+                <tr data-status="Active" data-date="2024-12-17">
+                    <td data-field="name">
+                        <div>
+                            <div class="form form--checkbox form--hide-label">
+                                <input id="checkbox-1" type="checkbox" class="form__input row-checkbox" value="" data-row-id="9" />
+                                <label class="form__label" for="checkbox-1">
+                                    <span>Hidden label</span>
+                                </label>
+                            </div>
+                            <a class="link" href="#" target="_blank">Class 1B</a>
+                        </div>
+                    </td>
+                    <td data-field="id">
+                        <strong>C4kCd-</strong>hHNJcL
+                        <button id="copy-btn" class="button button--small button--transparent button--icon" type="button" data-menu-id="menu1" data-align="right">
+                            <svg class="button--icon icon-copy"></svg>
+                        </button>
+                    </td>
+                    <td data-field="teacher">Christopher Franco</td>
+                    <td><span class="badge success">Active</span></td>
+                    <td>17 December 2024</td>
+                    <td class="center">
+                        <button class="button button--small button--transparent button--icon menu-button" type="button" data-menu-id="menu1" data-align="right">
+                            <svg class="button--icon icon-menu-stacked"></svg>
+                        </button>
+                    </td>
+                </tr>
+
+                <tr data-status="Active" data-date="2024-12-16">
+                    <td data-field="name">
+                        <div>
+                            <div class="form form--checkbox form--hide-label">
+                                <input id="checkbox-1" type="checkbox" class="form__input row-checkbox" value="" data-row-id="10" />
+                                <label class="form__label" for="checkbox-1">
+                                    <span>Hidden label</span>
+                                </label>
+                            </div>
+                            <a class="link" href="#" target="_blank">Class 3A</a>
+                        </div>
+                    </td>
+                    <td data-field="id">
+                        <strong>C4kCd-</strong>0PtXeP
+                        <button id="copy-btn" class="button button--small button--transparent button--icon" type="button" data-menu-id="menu1" data-align="right">
+                            <svg class="button--icon icon-copy"></svg>
+                        </button>
+                    </td>
+                    <td data-field="teacher">Jerry Hernandez</td>
+                    <td><span class="badge success">Active</span></td>
+                    <td>16 December 2024</td>
+                    <td class="center">
+                        <button class="button button--small button--transparent button--icon menu-button" type="button" data-menu-id="menu1" data-align="right">
+                            <svg class="button--icon icon-menu-stacked"></svg>
+                        </button>
+                    </td>
+                </tr>
+
+                <tr data-status="Active" data-date="2024-12-07">
+                    <td data-field="name">
+                        <div>
+                            <div class="form form--checkbox form--hide-label">
+                                <input id="checkbox-1" type="checkbox" class="form__input row-checkbox" value="" data-row-id="11" />
+                                <label class="form__label" for="checkbox-1">
+                                    <span>Hidden label</span>
+                                </label>
+                            </div>
+                            <a class="link" href="#" target="_blank">Class 4C</a>
+                        </div>
+                    </td>
+                    <td data-field="id">
+                        <strong>C4kCd-</strong>tW5U6l
+                        <button id="copy-btn" class="button button--small button--transparent button--icon" type="button" data-menu-id="menu1" data-align="right">
+                            <svg class="button--icon icon-copy"></svg>
+                        </button>
+                    </td>
+                    <td data-field="teacher">Diana Hernandez</td>
+                    <td><span class="badge success">Active</span></td>
+                    <td>07 December 2024</td>
+                    <td class="center">
+                        <button class="button button--small button--transparent button--icon menu-button" type="button" data-menu-id="menu1" data-align="right">
+                            <svg class="button--icon icon-menu-stacked"></svg>
+                        </button>
+                    </td>
+                </tr>
+
+                <tr data-status="Active" data-date="2024-11-28">
+                    <td data-field="name">
+                        <div>
+                            <div class="form form--checkbox form--hide-label">
+                                <input id="checkbox-1" type="checkbox" class="form__input row-checkbox" value="" data-row-id="12" />
+                                <label class="form__label" for="checkbox-1">
+                                    <span>Hidden label</span>
+                                </label>
+                            </div>
+                            <a class="link" href="#" target="_blank">Class 3C</a>
+                        </div>
+                    </td>
+                    <td data-field="id">
+                        <strong>C4kCd-</strong>IPczum
+                        <button id="copy-btn" class="button button--small button--transparent button--icon" type="button" data-menu-id="menu1" data-align="right">
+                            <svg class="button--icon icon-copy"></svg>
+                        </button>
+                    </td>
+                    <td data-field="teacher">James Burns</td>
+                    <td><span class="badge success">Active</span></td>
+                    <td>28 November 2024</td>
+                    <td class="center">
+                        <button class="button button--small button--transparent button--icon menu-button" type="button" data-menu-id="menu1" data-align="right">
+                            <svg class="button--icon icon-menu-stacked"></svg>
+                        </button>
+                    </td>
+                </tr>
+
+                <tr data-status="Active" data-date="2024-10-31">
+                    <td data-field="name">
+                        <div>
+                            <div class="form form--checkbox form--hide-label">
+                                <input id="checkbox-1" type="checkbox" class="form__input row-checkbox" value="" data-row-id="13" />
+                                <label class="form__label" for="checkbox-1">
+                                    <span>Hidden label</span>
+                                </label>
+                            </div>
+                            <a class="link" href="#" target="_blank">Class 5D</a>
+                        </div>
+                    </td>
+                    <td data-field="id">
+                        <strong>C4kCd-</strong>X2rhV1
+                        <button id="copy-btn" class="button button--small button--transparent button--icon" type="button" data-menu-id="menu1" data-align="right">
+                            <svg class="button--icon icon-copy"></svg>
+                        </button>
+                    </td>
+                    <td data-field="teacher">Raymond Wade</td>
+                    <td><span class="badge success">Active</span></td>
+                    <td>31 October 2024</td>
+                    <td class="center">
+                        <button class="button button--small button--transparent button--icon menu-button" type="button" data-menu-id="menu1" data-align="right">
+                            <svg class="button--icon icon-menu-stacked"></svg>
+                        </button>
+                    </td>
+                </tr>
+
+                <tr data-status="Active" data-date="2024-10-21">
+                    <td data-field="name">
+                        <div>
+                            <div class="form form--checkbox form--hide-label">
+                                <input id="checkbox-1" type="checkbox" class="form__input row-checkbox" value="" data-row-id="14" />
+                                <label class="form__label" for="checkbox-1">
+                                    <span>Hidden label</span>
+                                </label>
+                            </div>
+                            <a class="link" href="#" target="_blank">Class 4B</a>
+                        </div>
+                    </td>
+                    <td data-field="id">
+                        <strong>C4kCd-</strong>5Olgfk
+                        <button id="copy-btn" class="button button--small button--transparent button--icon" type="button" data-menu-id="menu1" data-align="right">
+                            <svg class="button--icon icon-copy"></svg>
+                        </button>
+                    </td>
+                    <td data-field="teacher">Ashley Cowan</td>
+                    <td><span class="badge success">Active</span></td>
+                    <td>21 October 2024</td>
+                    <td class="center">
+                        <button class="button button--small button--transparent button--icon menu-button" type="button" data-menu-id="menu1" data-align="right">
+                            <svg class="button--icon icon-menu-stacked"></svg>
+                        </button>
+                    </td>
+                </tr>
+
+                <tr data-status="Active" data-date="2024-10-11">
+                    <td data-field="name">
+                        <div>
+                            <div class="form form--checkbox form--hide-label">
+                                <input id="checkbox-1" type="checkbox" class="form__input row-checkbox" value="" data-row-id="15" />
+                                <label class="form__label" for="checkbox-1">
+                                    <span>Hidden label</span>
+                                </label>
+                            </div>
+                            <a class="link" href="#" target="_blank">Class 4D</a>
+                        </div>
+                    </td>
+                    <td data-field="id">
+                        <strong>C4kCd-</strong>zVzoCd
+                        <button id="copy-btn" class="button button--small button--transparent button--icon" type="button" data-menu-id="menu1" data-align="right">
+                            <svg class="button--icon icon-copy"></svg>
+                        </button>
+                    </td>
+                    <td data-field="teacher">Alexis Miranda</td>
+                    <td><span class="badge success">Active</span></td>
+                    <td>11 October 2024</td>
+                    <td class="center">
+                        <button class="button button--small button--transparent button--icon menu-button" type="button" data-menu-id="menu1" data-align="right">
+                            <svg class="button--icon icon-menu-stacked"></svg>
+                        </button>
+                    </td>
+                </tr>
+
+                <tr data-status="Active" data-date="2024-10-02">
+                    <td data-field="name">
+                        <div>
+                            <div class="form form--checkbox form--hide-label">
+                                <input id="checkbox-1" type="checkbox" class="form__input row-checkbox" value="" data-row-id="16" />
+                                <label class="form__label" for="checkbox-1">
+                                    <span>Hidden label</span>
+                                </label>
+                            </div>
+                            <a class="link" href="#" target="_blank">Class 2A</a>
+                        </div>
+                    </td>
+                    <td data-field="id">
+                        <strong>C4kCd-</strong>WqF573
+                        <button id="copy-btn" class="button button--small button--transparent button--icon" type="button" data-menu-id="menu1" data-align="right">
+                            <svg class="button--icon icon-copy"></svg>
+                        </button>
+                    </td>
+                    <td data-field="teacher">Ashley Rush</td>
+                    <td><span class="badge success">Active</span></td>
+                    <td>02 October 2024</td>
+                    <td class="center">
+                        <button class="button button--small button--transparent button--icon menu-button" type="button" data-menu-id="menu1" data-align="right">
+                            <svg class="button--icon icon-menu-stacked"></svg>
+                        </button>
+                    </td>
+                </tr>
+
+                <tr data-status="Active" data-date="2024-09-03">
+                    <td data-field="name">
+                        <div>
+                            <div class="form form--checkbox form--hide-label">
+                                <input id="checkbox-1" type="checkbox" class="form__input row-checkbox" value="" data-row-id="17" />
+                                <label class="form__label" for="checkbox-1">
+                                    <span>Hidden label</span>
+                                </label>
+                            </div>
+                            <a class="link" href="#" target="_blank">Class 1B</a>
+                        </div>
+                    </td>
+                    <td data-field="id">
+                        <strong>C4kCd-</strong>Vhc0fQ
+                        <button id="copy-btn" class="button button--small button--transparent button--icon" type="button" data-menu-id="menu1" data-align="right">
+                            <svg class="button--icon icon-copy"></svg>
+                        </button>
+                    </td>
+                    <td data-field="teacher">Danny Morgan</td>
+                    <td><span class="badge success">Active</span></td>
+                    <td>03 September 2024</td>
+                    <td class="center">
+                        <button class="button button--small button--transparent button--icon menu-button" type="button" data-menu-id="menu1" data-align="right">
+                            <svg class="button--icon icon-menu-stacked"></svg>
+                        </button>
+                    </td>
+                </tr>
+
+                <tr data-status="Active" data-date="2024-02-29">
+                    <td data-field="name">
+                        <div>
+                            <div class="form form--checkbox form--hide-label">
+                                <input id="checkbox-1" type="checkbox" class="form__input row-checkbox" value="" data-row-id="18" />
+                                <label class="form__label" for="checkbox-1">
+                                    <span>Hidden label</span>
+                                </label>
+                            </div>
+                            <a class="link" href="#" target="_blank">Class 3D</a>
+                        </div>
+                    </td>
+                    <td data-field="id">
+                        <strong>C4kCd-</strong>lEPeo8
+                        <button id="copy-btn" class="button button--small button--transparent button--icon" type="button" data-menu-id="menu1" data-align="right">
+                            <svg class="button--icon icon-copy"></svg>
+                        </button>
+                    </td>
+                    <td data-field="teacher">Bobby Berry</td>
+                    <td><span class="badge success">Active</span></td>
+                    <td>29 February 2024</td>
+                    <td class="center">
+                        <button class="button button--small button--transparent button--icon menu-button" type="button" data-menu-id="menu1" data-align="right">
+                            <svg class="button--icon icon-menu-stacked"></svg>
+                        </button>
+                    </td>
+                </tr>
+
+                <tr data-status="Active" data-date="2024-02-22">
+                    <td data-field="name">
+                        <div>
+                            <div class="form form--checkbox form--hide-label">
+                                <input id="checkbox-1" type="checkbox" class="form__input row-checkbox" value="" data-row-id="19" />
+                                <label class="form__label" for="checkbox-1">
+                                    <span>Hidden label</span>
+                                </label>
+                            </div>
+                            <a class="link" href="#" target="_blank">Class 1A</a>
+                        </div>
+                    </td>
+                    <td data-field="id">
+                        <strong>C4kCd-</strong>xGWYDg
+                        <button id="copy-btn" class="button button--small button--transparent button--icon" type="button" data-menu-id="menu1" data-align="right">
+                            <svg class="button--icon icon-copy"></svg>
+                        </button>
+                    </td>
+                    <td data-field="teacher">Mr. Eric Randall</td>
+                    <td><span class="badge success">Active</span></td>
+                    <td>22 February 2024</td>
+                    <td class="center">
+                        <button class="button button--small button--transparent button--icon menu-button" type="button" data-menu-id="menu1" data-align="right">
+                            <svg class="button--icon icon-menu-stacked"></svg>
+                        </button>
+                    </td>
+                </tr>
+
+                <tr data-status="Active" data-date="2024-01-04">
+                    <td data-field="name">
+                        <div>
+                            <div class="form form--checkbox form--hide-label">
+                                <input id="checkbox-1" type="checkbox" class="form__input row-checkbox" value="" data-row-id="20" />
+                                <label class="form__label" for="checkbox-1">
+                                    <span>Hidden label</span>
+                                </label>
+                            </div>
+                            <a class="link" href="#" target="_blank">Class 3B</a>
+                        </div>
+                    </td>
+                    <td data-field="id">
+                        <strong>C4kCd-</strong>QpiYFO
+                        <button id="copy-btn" class="button button--small button--transparent button--icon" type="button" data-menu-id="menu1" data-align="right">
+                            <svg class="button--icon icon-copy"></svg>
+                        </button>
+                    </td>
+                    <td data-field="teacher">Brittany Dougherty</td>
+                    <td><span class="badge success">Active</span></td>
+                    <td>04 January 2024</td>
+                    <td class="center">
+                        <button class="button button--small button--transparent button--icon menu-button" type="button" data-menu-id="menu1" data-align="right">
+                            <svg class="button--icon icon-menu-stacked"></svg>
+                        </button>
+                    </td>
+                </tr>
+
+                
+
+            </tbody>
+        </table>
+
+        <div id="no-results-message" style="display: none; padding: 10px; background: #ffe0e0; color: #900;">
+            No results found. Try adjusting your filters or search.
+        </div>
+
+    </div>
+
+    <div class="container row controls">
+        <div id="pagination-controls" class="container-pagination"></div>
+
+        <div class="container row">
+            <label for="rows-per-page">Rows per page:</label>
+            <div class="container-select">
+                <select id="rows-per-page">
+                    <option value="15" selected>15</option>
+                    <option value="30">30</option>
+                    <option value="45">45</option>
+                    <option value="60">60</option>
+                </select>
+                <div class="icon-dropdown"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="m19.737 8.718-.45-.45a1 1 0 0 0-1.39.09l-5.4 5.4-5.46-5.49a.91.91 0 0 0-1.29 0l-.45.45a.87.87 0 0 0-.08 1.23l6.28 6.32.28.36a.87.87 0 0 0 .61.3.86.86 0 0 0 .62-.27l.32-.33 6.32-6.26a1 1 0 0 0 .09-1.35" clip-rule="evenodd"></path></svg></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- <div class="container row"> -->
+    <div id="selection-popup" class="bulk-actions hidden">
+        <div class="bulk-action-container">
+            <span id="total-selected">0 selected:</span>
+            <button class="button button--filled button--small menu-button" data-menu-id="menu2" data-align="left">Bulk actions</button>
+        </div>
+        <div class="bulk-action-container">
+            <button id="select-remaining" class="button button--outline button--small" style="display:none;">Select more</button>
+            <button id="deselect-all" class="button button--outline button--small" style="display:none;">Deselect all</button>
+        </div>
+    </div>
+
+    <!-- Table menu -->
+    <div id="menu1" class="menu-popup hidden">
+        <ul>
+            <li><a target="_self" class="navigationLink" href="#id" tabindex="0" aria-hidden="false" aria-disabled="false">
+                <span class="textWrap"><span class="primaryText">Assign material</span></span></a>
+            </li>
+            <li><a target="_self" id="copy-link" class="navigationLink" href="#id" tabindex="0" aria-hidden="false" aria-disabled="false">
+                <span class="textWrap"><span class="primaryText">Copy class code</span></span></a>
+            </li>
+            <li><a target="_self" class="navigationLink" href="#id" tabindex="0" aria-hidden="false" aria-disabled="false">
+                <span class="textWrap"><span class="primaryText">View class gradebook</span></span></a>
+            </li>
+            <hr class="solid narrow">
+            <li><a target="_self" class="navigationLink" href="#id" tabindex="0" aria-hidden="false" aria-disabled="false">
+                <span class="textWrap"><span class="primaryText">Remove from organization</span></span></a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Actions menu -->
+    <div id="menu2" class="menu-popup hidden">
+        <ul>
+            <li><a target="_self" class="navigationLink" href="#id" tabindex="0" aria-hidden="false" aria-disabled="false">
+                <span class="textWrap"><span class="primaryText">Bulk action 1</span></span></a>
+            </li>
+            <li><a target="_self" class="navigationLink" href="#id" tabindex="0" aria-hidden="false" aria-disabled="false">
+                <span class="textWrap"><span class="primaryText">Bulk action 2</span></span></a>
+            </li>
+            <hr class="solid narrow">
+            <li><a target="_self" class="navigationLink" href="#id" tabindex="0" aria-hidden="false" aria-disabled="false">
+                <span class="textWrap"><span class="primaryText">Bulk action 3</span></span></a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <span class="close-btn">&times;</span>
+        <img id="lightbox-img" src="" alt="Expanded view">
+    </div>
+
+    <!-- Code copied dialogue -->
+    <div id="copy-dialog">Code copied</div>
+
+    <script src="script/script.js"></script>
+</body>
+</html>

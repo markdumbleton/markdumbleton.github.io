@@ -117,6 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const rowDate = row.getAttribute("data-date");
       const name = row.querySelector('[data-field="name"]')?.textContent.toLowerCase() || "";
       const email = row.querySelector('[data-field="email"]')?.textContent.toLowerCase() || "";
+      const teacher = row.querySelector('[data-field="teacher"]')?.textContent.toLowerCase() || "";
       const id = row.querySelector('[data-field="id"]')?.textContent.toLowerCase() || "";
       const sap = row.querySelector('[data-field="sap"]')?.textContent.toLowerCase() || "";
 
@@ -124,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (statusFilters.length > 0 && !statusFilters.includes(rowStatus)) show = false;
       if (dateFrom && rowDate < dateFrom) show = false;
       if (dateTo && rowDate > dateTo) show = false;
-      if (searchTerm && !name.includes(searchTerm) && !email.includes(searchTerm) && !id.includes(searchTerm) && !sap.includes(searchTerm)) show = false;
+      if (searchTerm && !name.includes(searchTerm) && !email.includes(searchTerm) && !teacher.includes(searchTerm) && !id.includes(searchTerm) && !sap.includes(searchTerm)) show = false;
 
       return show;
     });
@@ -464,5 +465,31 @@ window.addEventListener('resize', () => {
       if (e.target === lightbox) {
         lightbox.style.display = 'none';
       }
+    });
+  });
+
+
+// Code copied dialogue
+  document.addEventListener("DOMContentLoaded", function () {
+    const dialog = document.getElementById("copy-dialog");
+
+    function showDialog() {
+      dialog.style.display = "block";
+      setTimeout(() => {
+        dialog.style.display = "none";
+      }, 2000);
+    }
+
+    function copyText(text) {
+      navigator.clipboard.writeText(text).then(showDialog);
+    }
+
+    document.getElementById("copy-btn").addEventListener("click", function () {
+      copyText("Your code here");
+    });
+
+    document.getElementById("copy-link").addEventListener("click", function (e) {
+      e.preventDefault(); // Prevent link navigation
+      copyText("Your code here");
     });
   });

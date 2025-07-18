@@ -918,6 +918,10 @@ progress[value].rounded::-webkit-progress-value {
   background: url("../image/icons/icon-plus-24.svg");
 }
 
+.icon-copy {
+  background: url("../image/icons/icon-copy-24.svg");
+}
+
 .icon-download {
   background: url("../image/icons/icon-download-24.svg");
 }
@@ -1145,4 +1149,18 @@ hr.solid {
 hr.solid.narrow {
   margin: 0 0.5rem;
   width: calc(100% - 1rem);
+}
+
+#copy-dialog {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #323232;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  display: none;
+  z-index: 1000;
 }/*# sourceMappingURL=styles.css.map */
