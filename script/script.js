@@ -119,13 +119,15 @@ document.addEventListener("DOMContentLoaded", function () {
       const email = row.querySelector('[data-field="email"]')?.textContent.toLowerCase() || "";
       const teacher = row.querySelector('[data-field="teacher"]')?.textContent.toLowerCase() || "";
       const id = row.querySelector('[data-field="id"]')?.textContent.toLowerCase() || "";
-      const sap = row.querySelector('[data-field="sap"]')?.textContent.toLowerCase() || "";
+      const s4Account = row.querySelector('[data-field="s4-account"]')?.textContent.toLowerCase() || "";
+      const s4Number = row.querySelector('[data-field="s4-number"]')?.textContent.toLowerCase() || "";
+      const poNumber = row.querySelector('[data-field="po-number"]')?.textContent.toLowerCase() || "";
 
       let show = true;
       if (statusFilters.length > 0 && !statusFilters.includes(rowStatus)) show = false;
       if (dateFrom && rowDate < dateFrom) show = false;
       if (dateTo && rowDate > dateTo) show = false;
-      if (searchTerm && !name.includes(searchTerm) && !email.includes(searchTerm) && !teacher.includes(searchTerm) && !id.includes(searchTerm) && !sap.includes(searchTerm)) show = false;
+      if (searchTerm && !name.includes(searchTerm) && !email.includes(searchTerm) && !teacher.includes(searchTerm) && !id.includes(searchTerm) && !s4Account.includes(searchTerm) && !s4Number.includes(searchTerm) && !poNumber.includes(searchTerm)) show = false;
 
       return show;
     });

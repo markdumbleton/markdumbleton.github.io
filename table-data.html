@@ -18,7 +18,7 @@
     </div>
     
     <div class="container row search-filter-refresh">
-        <input type="text" id="searchInput" placeholder="Search by organization name, ID or SAP order number">
+        <input type="text" id="searchInput" placeholder="Search by organization name, ID, S4 account number, PO reference or S4 order number">
         <!-- <button id="filterBtn">Filters<span class="filter-badge"></span></button> -->
         <button id="filterBtn" class="button button--outline button--icon">
             <svg class="button--icon-left icon-filter"></svg>Filter<span class="badge button--icon-right" style="display: inline-flex;">2</span>
@@ -126,12 +126,17 @@
                     </th>
                     <th>
                         <button class="button button--small button--transparent button--icon button--sort">
-                            SAP order No. <svg class="button--icon-right sort-icon sort-unsorted"></svg>
+                            Country <svg class="button--icon-right sort-icon sort-unsorted"></svg>
                         </button>
                     </th>
                     <th>
                         <button class="button button--small button--transparent button--icon button--sort">
-                            Country <svg class="button--icon-right sort-icon sort-unsorted"></svg>
+                            S4 account no. <svg class="button--icon-right sort-icon sort-unsorted"></svg>
+                        </button>
+                    </th>
+                    <th>
+                        <button class="button button--small button--transparent button--icon button--sort">
+                            Action <svg class="button--icon-right sort-icon sort-unsorted"></svg>
                         </button>
                     </th>
                     <th>
@@ -146,7 +151,12 @@
                     </th>
                     <th>
                         <button class="button button--small button--transparent button--icon button--sort">
-                            Action <svg class="button--icon-right sort-icon sort-unsorted"></svg>
+                            PO ref. <svg class="button--icon-right sort-icon sort-unsorted"></svg>
+                        </button>
+                    </th>
+                    <th>
+                        <button class="button button--small button--transparent button--icon button--sort">
+                            S4 order no. <svg class="button--icon-right sort-icon sort-unsorted"></svg>
                         </button>
                     </th>
                     <th>
@@ -161,440 +171,520 @@
                     <td>28 July 2025</td>
                     <td data-field="name">Insight Education</td>
                     <td data-field="id">My47P</td>
-                    <td data-field="sap">JMTLPIM</td>
                     <td>NO</td>
+                    <td data-field="s4-account">100037028</td>
+                    <td>Recall</td>
                     <td>Oxford Placement Test</td>
                     <td>-299</td>
-                    <td>Recall</td>
+                    <td data-field="po-number">PO-2025-0001</td>
+                    <td data-field="s4-number">582316</td>
                     <td>Samuel Green</td>
                 </tr>
                 <tr data-date="2025-07-26" data-status="Add">
                     <td>26 July 2025</td>
                     <td data-field="name">Bright Minds Ltd</td>
                     <td data-field="id">Mp97H</td>
-                    <td data-field="sap">VTRUCL6</td>
                     <td>NL</td>
+                    <td data-field="s4-account">100065897</td>
+                    <td>Add</td>
                     <td>Oxford Placement Test</td>
                     <td>202</td>
-                    <td>Add</td>
+                    <td data-field="po-number">PO-2025-6985</td>
+                    <td data-field="s4-number">659874</td>
                     <td>Karen Walker</td>
                 </tr>
                 <tr data-date="2025-07-17" data-status="Add">
                     <td>17 July 2025</td>
                     <td data-field="name">Knowledge Tree</td>
                     <td data-field="id">Az63O</td>
-                    <td data-field="sap">4CWOJLW</td>
                     <td>NO</td>
+                    <td data-field="s4-account">100098755</td>
+                    <td>Add</td>
                     <td>Oxford Placement Test for Young Learners</td>
                     <td>172</td>
-                    <td>Add</td>
+                    <td data-field="po-number">PO-2025-0256</td>
+                    <td data-field="s4-number">365478</td>
                     <td>Noah Young</td>
                 </tr>
                 <tr data-date="2025-07-03" data-status="Gratis">
                     <td>03 July 2025</td>
                     <td data-field="name">Academic Partners</td>
                     <td data-field="id">Xi17W</td>
-                    <td data-field="sap">UKPLM9Y</td>
                     <td>NL</td>
+                    <td data-field="s4-account">100023541</td>
+                    <td>Gratis</td>
                     <td>Oxford Placement Test for Young Learners</td>
                     <td>715</td>
-                    <td>Gratis</td>
+                    <td data-field="po-number">PO-2025-0025</td>
+                    <td data-field="s4-number">569874</td>
                     <td>Noah Young</td>
                 </tr>
                 <tr data-date="2025-06-11" data-status="Recall">
                     <td>11 June 2025</td>
                     <td data-field="name">FutureLearn Co</td>
                     <td data-field="id">Rx20Y</td>
-                    <td data-field="sap">7H066CL</td>
                     <td>CH</td>
+                    <td data-field="s4-account">100084532</td>
+                    <td>Recall</td>
                     <td>Oxford Placement Test for Young Learners</td>
                     <td>-593</td>
-                    <td>Recall</td>
+                    <td data-field="po-number">PO-2025-0036</td>
+                    <td data-field="s4-number">365987</td>
                     <td>Rachel Scott</td>
                 </tr>
                 <tr data-date="2025-06-05" data-status="Add">
                     <td>05 June 2025</td>
                     <td data-field="name">Academic Partners</td>
                     <td data-field="id">Xi17W</td>
-                    <td data-field="sap">67IFTA1</td>
                     <td>NO</td>
+                    <td data-field="s4-account">100023541</td>
+                    <td>Add</td>
                     <td>Oxford Placement Test</td>
                     <td>598</td>
-                    <td>Add</td>
+                    <td data-field="po-number">PO-2025-0254</td>
+                    <td data-field="s4-number">987598</td>
                     <td>David Brown</td>
                 </tr>
                 <tr data-date="2025-05-18" data-status="Gratis">
                     <td>18 May 2025</td>
                     <td data-field="name">Learning Hub</td>
                     <td data-field="id">So95L</td>
-                    <td data-field="sap">UTYBLVA</td>
                     <td>AT</td>
+                    <td data-field="s4-account">100033201</td>
+                    <td>Gratis</td>
                     <td>Oxford Placement Test for Young Learners</td>
                     <td>850</td>
-                    <td>Gratis</td>
+                    <td data-field="po-number">PO-2025-0365</td>
+                    <td data-field="s4-number">698545</td>
                     <td>Jack Lewis</td>
                 </tr>
                 <tr data-date="2025-05-17" data-status="Add">
                     <td>17 May 2025</td>
                     <td data-field="name">EduCore Solutions</td>
                     <td data-field="id">Qu55R</td>
-                    <td data-field="sap">RIQV35W</td>
                     <td>CH</td>
+                    <td data-field="s4-account">100085203</td>
+                    <td>Add</td>
                     <td>Oxford Placement Test for Young Learners</td>
                     <td>677</td>
-                    <td>Add</td>
+                    <td data-field="po-number">PO-2025-0221</td>
+                    <td data-field="s4-number">225698</td>
                     <td>Quinn Wright</td>
                 </tr>
                 <tr data-date="2025-05-06" data-status="Recall">
                     <td>06 May 2025</td>
                     <td data-field="name">Bright Minds Ltd</td>
                     <td data-field="id">Mp97H</td>
-                    <td data-field="sap">R9RF85K</td>
                     <td>NL</td>
+                    <td data-field="s4-account">100065897</td>
+                    <td>Recall</td>
                     <td>Oxford Placement Test</td>
                     <td>-243</td>
-                    <td>Recall</td>
+                    <td data-field="po-number">PO-2025-0047</td>
+                    <td data-field="s4-number">548795</td>
                     <td>Quinn Wright</td>
                 </tr>
                 <tr data-date="2025-04-18" data-status="Recall">
                     <td>18 April 2025</td>
                     <td data-field="name">Global Scholars Inc</td>
                     <td data-field="id">Gz17L</td>
-                    <td data-field="sap">K946P1G</td>
                     <td>CH</td>
+                    <td data-field="s4-account">100054111</td>
+                    <td>Recall</td>
                     <td>Oxford Placement Test for Young Learners</td>
                     <td>-915</td>
-                    <td>Recall</td>
+                    <td data-field="po-number">PO-2025-0054</td>
+                    <td data-field="s4-number">987566</td>
                     <td>David Brown</td>
                 </tr>
                 <tr data-date="2025-04-18" data-status="Recall">
                     <td>18 April 2025</td>
                     <td data-field="name">FutureLearn Co</td>
                     <td data-field="id">Rx20Y</td>
-                    <td data-field="sap">67ZSOKS</td>
                     <td>NL</td>
+                    <td data-field="s4-account">100084532</td>
+                    <td>Recall</td>
                     <td>Oxford Placement Test</td>
                     <td>-777</td>
-                    <td>Recall</td>
+                    <td data-field="po-number">PO-2025-0069</td>
+                    <td data-field="s4-number">369888</td>
                     <td>Noah Young</td>
                 </tr>
                 <tr data-date="2025-04-11" data-status="Add">
                     <td>11 April 2025</td>
                     <td data-field="name">Bright Minds Ltd</td>
                     <td data-field="id">Mp97H</td>
-                    <td data-field="sap">P537XRQ</td>
                     <td>SE</td>
+                    <td data-field="s4-account">100065897</td>
+                    <td>Add</td>
                     <td>Oxford Placement Test</td>
                     <td>789</td>
-                    <td>Add</td>
+                    <td data-field="po-number">PO-2025-0047</td>
+                    <td data-field="s4-number">656698</td>
                     <td>Karen Walker</td>
                 </tr>
                 <tr data-date="2025-03-13" data-status="Add">
                     <td>13 March 2025</td>
                     <td data-field="name">NextGen Learning</td>
                     <td data-field="id">Jf98E</td>
-                    <td data-field="sap">K89XWJ8</td>
                     <td>AT</td>
+                    <td data-field="s4-account">100032989</td>
+                    <td>Add</td>
                     <td>Oxford Placement Test</td>
                     <td>742</td>
-                    <td>Add</td>
+                    <td data-field="po-number">PO-2025-0045</td>
+                    <td data-field="s4-number">987888</td>
                     <td>Emily Davis</td>
                 </tr>
                 <tr data-date="2025-02-26" data-status="Add">
                     <td>26 February 2025</td>
                     <td data-field="name">Bright Minds Ltd</td>
                     <td data-field="id">Mp97H</td>
-                    <td data-field="sap">Q6W508O</td>
                     <td>CH</td>
+                    <td data-field="s4-account">100065897</td>
+                    <td>Add</td>
                     <td>Oxford Placement Test</td>
                     <td>280</td>
-                    <td>Add</td>
+                    <td data-field="po-number">PO-2025-0354</td>
+                    <td data-field="s4-number">021444</td>
                     <td>David Brown</td>
                 </tr>
                 <tr data-date="2025-02-09" data-status="Add">
                     <td>09 February 2025</td>
                     <td data-field="name">Insight Education</td>
                     <td data-field="id">My47P</td>
-                    <td data-field="sap">XTDWMDQ</td>
                     <td>NO</td>
+                    <td data-field="s4-account">100037028</td>
+                    <td>Add</td>
                     <td>Oxford Placement Test for Young Learners</td>
                     <td>606</td>
-                    <td>Add</td>
+                    <td data-field="po-number">PO-2025-9870</td>
+                    <td data-field="s4-number">989668</td>
                     <td>Mia Allen</td>
                 </tr>
                 <tr data-date="2025-01-21" data-status="Add">
                     <td>21 January 2025</td>
                     <td data-field="name">EduCore Solutions</td>
                     <td data-field="id">Qu55R</td>
-                    <td data-field="sap">H32I9AJ</td>
                     <td>NL</td>
+                    <td data-field="s4-account">100085203</td>
+                    <td>Add</td>
                     <td>Oxford Placement Test for Young Learners</td>
                     <td>81</td>
-                    <td>Add</td>
+                    <td data-field="po-number">PO-2025-0612</td>
+                    <td data-field="s4-number">254469</td>
                     <td>Paul King</td>
                 </tr>
                 <tr data-date="2025-01-06" data-status="Recall">
                     <td>06 January 2025</td>
                     <td data-field="name">EduCore Solutions</td>
                     <td data-field="id">Qu55R</td>
-                    <td data-field="sap">L6V2PAK</td>
                     <td>NL</td>
+                    <td data-field="s4-account">100085203</td>
+                    <td>Recall</td>
                     <td>Oxford Placement Test</td>
                     <td>-718</td>
-                    <td>Recall</td>
+                    <td data-field="po-number">PO-2025-0621</td>
+                    <td data-field="s4-number">654777</td>
                     <td>Tina Adams</td>
                 </tr>
                 <tr data-date="2024-12-11" data-status="Gratis">
                     <td>11 December 2024</td>
                     <td data-field="name">EduCore Solutions</td>
                     <td data-field="id">Qu55R</td>
-                    <td data-field="sap">898TP11</td>
                     <td>NL</td>
+                    <td data-field="s4-account">100085203</td>
+                    <td>Gratis</td>
                     <td>Oxford Placement Test for Young Learners</td>
                     <td>150</td>
-                    <td>Gratis</td>
+                    <td data-field="po-number">PO-2025-0369</td>
+                    <td data-field="s4-number">458966</td>
                     <td>Noah Young</td>
                 </tr>
                 <tr data-date="2024-11-27" data-status="Add">
                     <td>27 November 2024</td>
                     <td data-field="name">EduCore Solutions</td>
                     <td data-field="id">Qu55R</td>
-                    <td data-field="sap">38FFWH5</td>
                     <td>NL</td>
+                    <td data-field="s4-account">100085203</td>
+                    <td>Add</td>
                     <td>Oxford Placement Test</td>
                     <td>781</td>
-                    <td>Add</td>
+                    <td data-field="po-number">PO-2025-0511</td>
+                    <td data-field="s4-number">115968</td>
                     <td>Jack Lewis</td>
                 </tr>
                 <tr data-date="2024-11-22" data-status="Recall">
                     <td>22 November 2024</td>
                     <td data-field="name">Knowledge Tree</td>
                     <td data-field="id">Az63O</td>
-                    <td data-field="sap">DHF8B7S</td>
                     <td>NL</td>
+                    <td data-field="s4-account">100098755</td>
+                    <td>Recall</td>
                     <td>Oxford Placement Test</td>
                     <td>-991</td>
-                    <td>Recall</td>
+                    <td data-field="po-number">PO-2025-0487</td>
+                    <td data-field="s4-number">856447</td>
                     <td>Noah Young</td>
                 </tr>
                 <tr data-date="2024-11-13" data-status="Add">
                     <td>13 November 2024</td>
                     <td data-field="name">SmartEd Group</td>
                     <td data-field="id">Ff58D</td>
-                    <td data-field="sap">N25BU3J</td>
                     <td>NO</td>
+                    <td data-field="s4-account">100044587</td>
+                    <td>Add</td>
                     <td>Oxford Placement Test</td>
                     <td>608</td>
-                    <td>Add</td>
+                    <td data-field="po-number">PO-2025-9874</td>
+                    <td data-field="s4-number">021444</td>
                     <td>Frank Wilson</td>
                 </tr>
                 <tr data-date="2024-10-18" data-status="Recall">
                     <td>18 October 2024</td>
                     <td data-field="name">Insight Education</td>
                     <td data-field="id">My47P</td>
-                    <td data-field="sap">6AYDYU9</td>
                     <td>NO</td>
+                    <td data-field="s4-account">100037028</td>
+                    <td>Recall</td>
                     <td>Oxford Placement Test for Young Learners</td>
                     <td>-736</td>
-                    <td>Recall</td>
+                    <td data-field="po-number">PO-2025-0002</td>
+                    <td data-field="s4-number">036589</td>
                     <td>Samuel Green</td>
                 </tr>
                 <tr data-date="2024-10-13" data-status="Recall">
                     <td>13 October 2024</td>
                     <td data-field="name">Global Scholars Inc</td>
                     <td data-field="id">Gz17L</td>
-                    <td data-field="sap">WK2KE4G</td>
                     <td>NL</td>
+                    <td data-field="s4-account">100054111</td>
+                    <td>Recall</td>
                     <td>Oxford Placement Test</td>
                     <td>-852</td>
-                    <td>Recall</td>
+                    <td data-field="po-number">PO-2025-0010</td>
+                    <td data-field="s4-number">159874</td>
                     <td>David Brown</td>
                 </tr>
                 <tr data-date="2024-10-08" data-status="Gratis">
                     <td>08 October 2024</td>
                     <td data-field="name">Global Scholars Inc</td>
                     <td data-field="id">Gz17L</td>
-                    <td data-field="sap">KECWST8</td>
                     <td>NL</td>
+                    <td data-field="s4-account">100054111</td>
+                    <td>Gratis</td>
                     <td>Oxford Placement Test</td>
                     <td>190</td>
-                    <td>Gratis</td>
+                    <td data-field="po-number">PO-2025-0064</td>
+                    <td data-field="s4-number">023654</td>
                     <td>Samuel Green</td>
                 </tr>
                 <tr data-date="2024-09-27" data-status="Gratis">
                     <td>27 September 2024</td>
                     <td data-field="name">Academic Partners</td>
                     <td data-field="id">Xi17W</td>
-                    <td data-field="sap">G72MYQ0</td>
                     <td>SE</td>
+                    <td data-field="s4-account">100023541</td>
+                    <td>Gratis</td>
                     <td>Oxford Placement Test for Young Learners</td>
                     <td>334</td>
-                    <td>Gratis</td>
+                    <td data-field="po-number">PO-2025-0522</td>
+                    <td data-field="s4-number">653200</td>
                     <td>Tina Adams</td>
                 </tr>
                 <tr data-date="2024-09-24" data-status="Add">
                     <td>24 September 2024</td>
                     <td data-field="name">SmartEd Group</td>
                     <td data-field="id">Ff58D</td>
-                    <td data-field="sap">KUNOVTJ</td>
                     <td>CH</td>
+                    <td data-field="s4-account">100044587</td>
+                    <td>Add</td>
                     <td>Oxford Placement Test for Young Learners</td>
                     <td>551</td>
-                    <td>Add</td>
+                    <td data-field="po-number">PO-2025-0314</td>
+                    <td data-field="s4-number">302547</td>
                     <td>Paul King</td>
                 </tr>
                 <tr data-date="2024-09-19" data-status="Recall">
                     <td>19 September 2024</td>
                     <td data-field="name">Global Scholars Inc</td>
                     <td data-field="id">Gz17L</td>
-                    <td data-field="sap">J901N4U</td>
                     <td>AT</td>
+                    <td data-field="s4-account">100054111</td>
+                    <td>Recall</td>
                     <td>Oxford Placement Test for Young Learners</td>
                     <td>-526</td>
-                    <td>Recall</td>
+                    <td data-field="po-number">PO-2025-0478</td>
+                    <td data-field="s4-number">875200</td>
                     <td>Quinn Wright</td>
                 </tr>
                 <tr data-date="2024-08-28" data-status="Gratis">
                     <td>28 August 2024</td>
                     <td data-field="name">Bright Minds Ltd</td>
                     <td data-field="id">Mp97H</td>
-                    <td data-field="sap">WSGU140</td>
                     <td>SE</td>
+                    <td data-field="s4-account">100065897</td>
+                    <td>Gratis</td>
                     <td>Oxford Placement Test</td>
                     <td>523</td>
-                    <td>Gratis</td>
+                    <td data-field="po-number">PO-2025-0599</td>
+                    <td data-field="s4-number">354788</td>
                     <td>Mia Allen</td>
                 </tr>
                 <tr data-date="2024-08-14" data-status="Add">
                     <td>14 August 2024</td>
                     <td data-field="name">Global Scholars Inc</td>
                     <td data-field="id">Gz17L</td>
-                    <td data-field="sap">ZTF78JX</td>
                     <td>AT</td>
+                    <td data-field="s4-account">100054111</td>
+                    <td>Add</td>
                     <td>Oxford Placement Test for Young Learners</td>
                     <td>732</td>
-                    <td>Add</td>
+                    <td data-field="po-number">PO-2025-0428</td>
+                    <td data-field="s4-number">478955</td>
                     <td>Grace Thompson</td>
                 </tr>
                 <tr data-date="2024-08-12" data-status="Recall">
                     <td>12 August 2024</td>
                     <td data-field="name">FutureLearn Co</td>
                     <td data-field="id">Rx20Y</td>
-                    <td data-field="sap">D5IHXM7</td>
                     <td>NL</td>
+                    <td data-field="s4-account">100084532</td>
+                    <td>Recall</td>
                     <td>Oxford Placement Test for Young Learners</td>
                     <td>-836</td>
-                    <td>Recall</td>
+                    <td data-field="po-number">PO-2025-0466</td>
+                    <td data-field="s4-number">875522</td>
                     <td>Karen Walker</td>
                 </tr>
                 <tr data-date="2024-08-06" data-status="Recall">
                     <td>06 August 2024</td>
                     <td data-field="name">NextGen Learning</td>
                     <td data-field="id">Jf98E</td>
-                    <td data-field="sap">JI3GEUK</td>
                     <td>SE</td>
+                    <td data-field="s4-account">100032989</td>
+                    <td>Recall</td>
                     <td>Oxford Placement Test for Young Learners</td>
                     <td>-320</td>
-                    <td>Recall</td>
+                    <td data-field="po-number">PO-2025-0532</td>
+                    <td data-field="s4-number">324588</td>
                     <td>Tina Adams</td>
                 </tr>
                 <tr data-date="2024-07-15" data-status="Gratis">
                     <td>15 July 2024</td>
                     <td data-field="name">Insight Education</td>
                     <td data-field="id">My47P</td>
-                    <td data-field="sap">JUIRZSO</td>
                     <td>SE</td>
+                    <td data-field="s4-account">100037028</td>
+                    <td>Gratis</td>
                     <td>Oxford Placement Test for Young Learners</td>
                     <td>233</td>
-                    <td>Gratis</td>
+                    <td data-field="po-number">PO-2025-0003</td>
+                    <td data-field="s4-number">487950</td>
                     <td>Alice Johnson</td>
                 </tr>
                 <tr data-date="2024-07-05" data-status="Gratis">
                     <td>05 July 2024</td>
                     <td data-field="name">Learning Hub</td>
                     <td data-field="id">So95L</td>
-                    <td data-field="sap">B5AXPFJ</td>
                     <td>NL</td>
+                    <td data-field="s4-account">100033201</td>
+                    <td>Gratis</td>
                     <td>Oxford Placement Test for Young Learners</td>
                     <td>181</td>
-                    <td>Gratis</td>
+                    <td data-field="po-number">PO-2025-0004</td>
+                    <td data-field="s4-number">897544</td>
                     <td>Rachel Scott</td>
                 </tr>
                 <tr data-date="2024-06-23" data-status="Recall">
                     <td>23 June 2024</td>
                     <td data-field="name">Academic Partners</td>
                     <td data-field="id">Xi17W</td>
-                    <td data-field="sap">6B6T72N</td>
                     <td>CH</td>
+                    <td data-field="s4-account">100023541</td>
+                    <td>Recall</td>
                     <td>Oxford Placement Test for Young Learners</td>
                     <td>-207</td>
-                    <td>Recall</td>
+                    <td data-field="po-number">PO-2025-4896</td>
+                    <td data-field="s4-number">693254</td>
                     <td>Rachel Scott</td>
                 </tr>
                 <tr data-date="2024-06-20" data-status="Recall">
                     <td>20 June 2024</td>
                     <td data-field="name">SmartEd Group</td>
                     <td data-field="id">Ff58D</td>
-                    <td data-field="sap">N35RUVU</td>
                     <td>AT</td>
+                    <td data-field="s4-account">100044587</td>
+                    <td>Recall</td>
                     <td>Oxford Placement Test for Young Learners</td>
                     <td>-627</td>
-                    <td>Recall</td>
+                    <td data-field="po-number">PO-2025-6532</td>
+                    <td data-field="s4-number">112254</td>
                     <td>Jack Lewis</td>
                 </tr>
                 <tr data-date="2024-05-15" data-status="Add">
                     <td>15 May 2024</td>
                     <td data-field="name">NextGen Learning</td>
                     <td data-field="id">Jf98E</td>
-                    <td data-field="sap">TSGFEDZ</td>
                     <td>NO</td>
+                    <td data-field="s4-account">100032989</td>
+                    <td>Add</td>
                     <td>Oxford Placement Test for Young Learners</td>
                     <td>596</td>
-                    <td>Add</td>
+                    <td data-field="po-number">PO-2025-0245</td>
+                    <td data-field="s4-number">659888</td>
                     <td>Liam Hall</td>
                 </tr>
                 <tr data-date="2024-04-23" data-status="Gratis">
                     <td>23 April 2024</td>
                     <td data-field="name">Academic Partners</td>
                     <td data-field="id">Xi17W</td>
-                    <td data-field="sap">XCSJJK8</td>
                     <td>NL</td>
+                    <td data-field="s4-account">100023541</td>
+                    <td>Gratis</td>
                     <td>Oxford Placement Test for Young Learners</td>
                     <td>788</td>
-                    <td>Gratis</td>
+                    <td data-field="po-number">PO-2025-0658</td>
+                    <td data-field="s4-number">036544</td>
                     <td>Catherine Lee</td>
                 </tr>
                 <tr data-date="2024-04-16" data-status="Gratis">
                     <td>16 April 2024</td>
                     <td data-field="name">Insight Education</td>
                     <td data-field="id">My47P</td>
-                    <td data-field="sap">AEE0R1F</td>
                     <td>SE</td>
+                    <td data-field="s4-account">100037028</td>
+                    <td>Gratis</td>
                     <td>Oxford Placement Test for Young Learners</td>
                     <td>914</td>
-                    <td>Gratis</td>
+                    <td data-field="po-number">PO-2025-0365</td>
+                    <td data-field="s4-number">878852</td>
                     <td>Henry Martinez</td>
                 </tr>
                 <tr data-date="2024-03-21" data-status="Add">
                     <td>21 March 2024</td>
                     <td data-field="name">EduCore Solutions</td>
                     <td data-field="id">Qu55R</td>
-                    <td data-field="sap">SJLZLS0</td>
                     <td>NO</td>
+                    <td data-field="s4-account">100085203</td>
+                    <td>Add</td>
                     <td>Oxford Placement Test</td>
                     <td>420</td>
-                    <td>Add</td>
+                    <td data-field="po-number">PO-2025-9877</td>
+                    <td data-field="s4-number">775896</td>
                     <td>Emily Davis</td>
                 </tr>
                 <tr data-date="2024-03-01" data-status="Gratis">
                     <td>01 March 2024</td>
                     <td data-field="name">NextGen Learning</td>
                     <td data-field="id">Jf98E</td>
-                    <td data-field="sap">YJJ0XDH</td>
                     <td>NO</td>
+                    <td data-field="s4-account">100032989</td>
+                    <td>Gratis</td>
                     <td>Oxford Placement Test</td>
                     <td>670</td>
-                    <td>Gratis</td>
+                    <td data-field="po-number">PO-2025-0245</td>
+                    <td data-field="s4-number">654890</td>
                     <td>Noah Young</td>
                 </tr>
 
