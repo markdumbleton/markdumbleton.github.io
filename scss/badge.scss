@@ -7,7 +7,7 @@
 	// gap: $gap__2;
 	border-width: 1px;
 	border-style: solid;
-	padding: 1px $gap__2;
+	padding: $gap__1 $gap__2;
 	background-color: transparent;
 	// min-width: $icon-size__medium;
 	svg {
@@ -35,17 +35,22 @@
 }
 .badge {
 	display: inline-flex;
-    min-height: 1.5rem;
+    // min-height: 1.5rem;
     align-items: center;
     justify-content: center;
-    padding: 0 $gap__2;
+    padding: $gap__1 $gap__2;
 	background-color: $isadora-pink;
     border-radius: $border-radius__default;
-    border-color: $primary100;
+    border-color: $white100;
 	color: $primary100;
     font-size: $font-size__xsmall;
     font-weight: $font-weight__700;
-	line-height: $line-height__120;
+	line-height: $line-height__100;
+	&.primary {
+		background-color: $primary100;
+		color: $white100;
+		// border-color: $validation-red100;
+	}
 	&.success {
 		background-color: $validation-green20;
 		border-color: $validation-green100;

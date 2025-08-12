@@ -520,7 +520,6 @@ ul.inline-list li {
 .form__input {
   clip: rect(1px, 1px, 1px, 1px);
   border: 0;
-  -webkit-clip-path: inset(50%);
   clip-path: inset(50%);
   height: 1px;
   overflow: hidden;
@@ -776,7 +775,7 @@ ul.list--group--outline li .list--label .form__sub-label {
   align-items: center;
   border-width: 1px;
   border-style: solid;
-  padding: 1px 0.5rem;
+  padding: 0.25rem 0.5rem;
   background-color: transparent;
 }
 .form__information svg,
@@ -803,17 +802,20 @@ ul.list--group--outline li .list--label .form__sub-label {
 
 .badge {
   display: inline-flex;
-  min-height: 1.5rem;
   align-items: center;
   justify-content: center;
-  padding: 0 0.5rem;
+  padding: 0.25rem 0.5rem;
   background-color: #F3A7B8;
   border-radius: 0.5rem;
-  border-color: #002147;
+  border-color: #FFFFFF;
   color: #002147;
   font-size: 0.75rem;
   font-weight: 700;
-  line-height: 120%;
+  line-height: 100%;
+}
+.badge.primary {
+  background-color: #002147;
+  color: #FFFFFF;
 }
 .badge.success {
   background-color: rgba(0, 128, 0, 0.2);
@@ -976,6 +978,10 @@ progress[value].rounded::-webkit-progress-value {
   -webkit-mask-image: url("../image/icons/icon-copy-24.svg");
   mask-image: url("../image/icons/icon-copy-24.svg");
   background-blend-mode: color;
+}
+
+.icon-external-link {
+  background: url("../image/icons/icon-external-link-24.svg");
 }
 
 .icon-download {
@@ -1219,8 +1225,7 @@ progress[value].rounded::-webkit-progress-value {
 .donut__slice__second {
   --second-start: calc(var(--first));
   --second-check: max(calc(var(--second-start) - .5), 0);
-  -webkit-clip-path: inset(0 calc(50% * var(--second-check) / var(--second-check)) 0 0);
-          clip-path: inset(0 calc(50% * var(--second-check) / var(--second-check)) 0 0);
+  clip-path: inset(0 calc(50% * var(--second-check) / var(--second-check)) 0 0);
 }
 
 .donut__slice__second::before {
@@ -1239,8 +1244,7 @@ progress[value].rounded::-webkit-progress-value {
 .donut__slice__third {
   --third-start: calc(var(--first) + var(--second));
   --third-check: max(calc(var(--third-start) - .5), 0);
-  -webkit-clip-path: inset(0 calc(50% * var(--third-check) / var(--third-check)) 0 0);
-          clip-path: inset(0 calc(50% * var(--third-check) / var(--third-check)) 0 0);
+  clip-path: inset(0 calc(50% * var(--third-check) / var(--third-check)) 0 0);
 }
 
 .donut__slice__third::before {
@@ -1259,8 +1263,7 @@ progress[value].rounded::-webkit-progress-value {
 .donut__slice__fourth {
   --fourth-start: calc(var(--first) + var(--second) + var(--third));
   --fourth-check: max(calc(var(--fourth-start) - .5), 0);
-  -webkit-clip-path: inset(0 calc(50% * var(--fourth-check) / var(--fourth-check)) 0 0);
-          clip-path: inset(0 calc(50% * var(--fourth-check) / var(--fourth-check)) 0 0);
+  clip-path: inset(0 calc(50% * var(--fourth-check) / var(--fourth-check)) 0 0);
 }
 
 .donut__slice__fourth::before {
@@ -1279,8 +1282,7 @@ progress[value].rounded::-webkit-progress-value {
 .donut__slice__fifth {
   --fifth-start: calc(var(--first) + var(--second) + var(--third) + var(--fourth));
   --fifth-check: max(calc(var(--fifth-start) - .5), 0);
-  -webkit-clip-path: inset(0 calc(50% * var(--fifth-check) / var(--fifth-check)) 0 0);
-          clip-path: inset(0 calc(50% * var(--fifth-check) / var(--fifth-check)) 0 0);
+  clip-path: inset(0 calc(50% * var(--fifth-check) / var(--fifth-check)) 0 0);
 }
 
 .donut__slice__fifth::before {
@@ -1371,4 +1373,8 @@ hr.solid {
 hr.solid.narrow {
   margin: 0 0.5rem;
   width: calc(100% - 1rem);
+}
+
+.canvas-container {
+  width: 70%;
 }/*# sourceMappingURL=styles.css.map */

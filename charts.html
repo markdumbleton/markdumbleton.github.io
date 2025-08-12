@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Skills view</title>
+    <link rel="stylesheet" href="scss/styles.css" />
+</head>
+<body>
+    <div class="container row">
+        <div class="container column title">
+            <h1>Skills view</h1>
+            <p class="sub__text">Example</p>
+        </div>
+    </div>
+
+    <div class="container column">
+        <div class="canvas-container">
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+
+    <script src="script/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        const ctx = document.getElementById('myChart');
+
+        Chart.defaults.font.family = "Open Sans";
+        Chart.defaults.font.size = 16;
+        Chart.defaults.color = "#002147";
+
+        new Chart(ctx, {
+            type: 'polarArea',
+            data: {
+            labels: [
+                'Listening', 
+                'Reading', 
+                'Speaking', 
+                'Grammar', 
+                'Writing', 
+                'Vocabulary', 
+                'Pronunciation', 
+                'Literacy', 
+                'Video viewing'
+            ],
+            datasets: [{
+                label: 'Score',
+                data: [75, 50, 25, 80, 75, 60, 90, 0, 65],
+                backgroundColor: [
+                    "rgba(0, 191, 255, 0.5)",
+                    "rgba(50, 205, 50, 0.5)",
+                    "rgba(255, 105, 180, 0.5)",
+                    "rgba(255, 165, 0, 0.5)",
+                    "rgba(147, 112, 219, 0.5)",
+                    "rgba(0, 255, 255, 0.5)",
+                    "rgba(255, 255, 0, 0.5)",
+                    "rgba(64, 224, 208, 0.5)",
+                    "rgba(255, 36, 0, 0.5)"
+                ],
+                borderColor: [
+                    "rgba(0, 191, 255, 1)",
+                    "rgba(50, 205, 50, 1)",
+                    "rgba(255, 105, 180, 1)",
+                    "rgba(255, 165, 0, 1)",
+                    "rgba(147, 112, 219, 1)",
+                    "rgba(0, 255, 255, 1)",
+                    "rgba(255, 255, 0, 1)",
+                    "rgba(64, 224, 208, 1)",
+                    "rgba(255, 36, 0, 1)"
+                ],
+            }]
+            },
+            options: {
+                circular: true,
+                responsive: true,
+                plugins: {
+                    legend: {
+                        align: "center",
+                        position: "left",
+                        labels: {
+                            boxWidth: 20,
+                            padding: 24,
+                            usePointStyle: true,
+                            font: {
+                                weight: '600'
+                            },
+                            generateLabels(chart) {
+                                const data = chart.data;
+                                if (data.labels.length && data.datasets.length) {
+                                    const {labels: {pointStyle}} = chart.legend.options;
+                
+                                    return data.labels.map((label, i) => {
+                                        const meta = chart.getDatasetMeta(0);
+                                        const style = meta.controller.getStyle(i);
+                
+                                        return {
+                                            text: `${label} (Score: ${data['datasets'][0].data[i]})`,
+                                            fillStyle: style.backgroundColor,
+                                            strokeStyle: style.borderColor,
+                                            lineWidth: style.borderWidth,
+                                            pointStyle: pointStyle,
+                                            hidden: !chart.getDataVisibility(i),
+                
+                                            // Extra data used for toggling the correct item
+                                            index: i
+                                        };
+                                    });
+                                }
+                                return [];
+                            }
+                        },
+                    },
+                    onClick(e, legendItem, legend) {
+                        legend.chart.toggleDataVisibility(legendItem.index);
+                        legend.chart.update();
+                    },
+                    // title: {
+                    //     display: true,
+                    //     text: 'Chart.js Polar Area Chart'
+                    // },
+                    // subtitle: {
+                    //     display: true,
+                    //     text: 'Custom Chart Subtitle'
+                    // },
+                    tooltip: {
+                        enabled: true,
+                        usePointStyle: true,
+                    },
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        display: false
+                    },
+                    r: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 100,
+                        grid: {
+                            color: '#B3BDC8' // Change this to any color you like
+                        },
+                        ticks: {
+                            font: {
+                                size: 16,
+                            },
+                            color: "#B3BDC8",
+                            backdropColor: "white",
+                            useBorderRadius: true,
+                            borderRadius: 2,
+                            // z: 2,
+                            stepSize: 20
+                        }
+                    }
+                    // grid: {
+                    //     lineWidth: 2
+                    // }
+                },
+                elements: {
+                    arc: {
+                        // angle: 180,
+                        borderWidth: 1,
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

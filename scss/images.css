@@ -78,6 +78,10 @@
   background-blend-mode: color;
 }
 
+.icon-external-link {
+  background: url("../image/icons/icon-external-link-24.svg");
+}
+
 .icon-download {
   background: url("../image/icons/icon-download-24.svg");
 }

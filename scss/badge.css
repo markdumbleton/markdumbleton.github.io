@@ -3,7 +3,7 @@
   align-items: center;
   border-width: 1px;
   border-style: solid;
-  padding: 1px 0.5rem;
+  padding: 0.25rem 0.5rem;
   background-color: transparent;
 }
 .form__information svg,
@@ -30,17 +30,20 @@
 
 .badge {
   display: inline-flex;
-  min-height: 1.5rem;
   align-items: center;
   justify-content: center;
-  padding: 0 0.5rem;
+  padding: 0.25rem 0.5rem;
   background-color: #F3A7B8;
   border-radius: 0.5rem;
-  border-color: #002147;
+  border-color: #FFFFFF;
   color: #002147;
   font-size: 0.75rem;
   font-weight: 700;
-  line-height: 120%;
+  line-height: 100%;
+}
+.badge.primary {
+  background-color: #002147;
+  color: #FFFFFF;
 }
 .badge.success {
   background-color: rgba(0, 128, 0, 0.2);

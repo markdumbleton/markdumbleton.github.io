@@ -73,8 +73,7 @@
 .donut__slice__second {
   --second-start: calc(var(--first));
   --second-check: max(calc(var(--second-start) - .5), 0);
-  -webkit-clip-path: inset(0 calc(50% * var(--second-check) / var(--second-check)) 0 0);
-          clip-path: inset(0 calc(50% * var(--second-check) / var(--second-check)) 0 0);
+  clip-path: inset(0 calc(50% * var(--second-check) / var(--second-check)) 0 0);
 }
 
 .donut__slice__second::before {
@@ -93,8 +92,7 @@
 .donut__slice__third {
   --third-start: calc(var(--first) + var(--second));
   --third-check: max(calc(var(--third-start) - .5), 0);
-  -webkit-clip-path: inset(0 calc(50% * var(--third-check) / var(--third-check)) 0 0);
-          clip-path: inset(0 calc(50% * var(--third-check) / var(--third-check)) 0 0);
+  clip-path: inset(0 calc(50% * var(--third-check) / var(--third-check)) 0 0);
 }
 
 .donut__slice__third::before {
@@ -113,8 +111,7 @@
 .donut__slice__fourth {
   --fourth-start: calc(var(--first) + var(--second) + var(--third));
   --fourth-check: max(calc(var(--fourth-start) - .5), 0);
-  -webkit-clip-path: inset(0 calc(50% * var(--fourth-check) / var(--fourth-check)) 0 0);
-          clip-path: inset(0 calc(50% * var(--fourth-check) / var(--fourth-check)) 0 0);
+  clip-path: inset(0 calc(50% * var(--fourth-check) / var(--fourth-check)) 0 0);
 }
 
 .donut__slice__fourth::before {
@@ -133,8 +130,7 @@
 .donut__slice__fifth {
   --fifth-start: calc(var(--first) + var(--second) + var(--third) + var(--fourth));
   --fifth-check: max(calc(var(--fifth-start) - .5), 0);
-  -webkit-clip-path: inset(0 calc(50% * var(--fifth-check) / var(--fifth-check)) 0 0);
-          clip-path: inset(0 calc(50% * var(--fifth-check) / var(--fifth-check)) 0 0);
+  clip-path: inset(0 calc(50% * var(--fifth-check) / var(--fifth-check)) 0 0);
 }
 
 .donut__slice__fifth::before {
